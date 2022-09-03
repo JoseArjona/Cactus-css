@@ -1,0 +1,48 @@
+<div class="container">
+  <h1>404<br />Pagina no disponible</h1>
+  <h2>{Astro.url.pathname}</h2>
+  <h3>Asegurate de escribir bien la url</h3>
+  <br />
+  <a href="/" class="btn" role="button">Volver al Incio</a>
+
+  <br />
+</div>
+
+<style>
+  body {
+    font-family: "Open Sans", sans-serif;
+  }
+  .container {
+    max-width: 90%;
+    width: 1200px;
+    margin: 10rem auto;
+    overflow: hidden;
+    text-align: center;
+  }
+  h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #2b3752;
+    text-align: center;
+    margin: 0;
+  }
+
+  .btn {
+    background: #2e6e65;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 22px;
+    transition: 0.3s ease all;
+  }
+
+  .btn:hover {
+    box-shadow: 1px 1px #2b3752, 2px 2px #2b3752, 3px 3px #2b3752;
+    transform: translateX(-3px);
+  }
+</style>

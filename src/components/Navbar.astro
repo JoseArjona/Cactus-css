@@ -1,0 +1,91 @@
+---
+---
+
+<div id="container">
+  <nav>
+    <ul>
+      <li><a href="/">Inicio</a></li>
+      <li>
+        <a href="/Componentes">Componentes &#8595; <i class="down"></i></a>
+        <ul>
+          <li><a href="/Componentes#hd">Encabezados</a></li>
+          <li><a href="/Componentes#cont">Contenedor/Grid</a></li>
+          <li><a href="/Componentes#cbc">Card y Botones</a></li>
+          <li><a href="/Componentes#form">Formulario</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/Personalizar">Personalizar</a>
+      </li>
+      <li>
+        <a href="./assets/css/cactus.css" download="cactus.css" type="button"
+          >Descarga ⬇️</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<style>
+  #container {
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  nav {
+    /* margin: 30px auto; */
+    background-color: #2b3752;
+    position: sticky;
+    top: 0;
+  }
+
+  nav ul {
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    position: relative;
+    text-align: center;
+  }
+
+  nav ul li {
+    display: inline-block;
+    background-color: #2b3752;
+  }
+
+  nav a {
+    display: block;
+    padding: 0 20px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 60px;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    background-color: #2e6e65;
+  }
+
+  /* Hide Dropdowns by Default */
+  nav ul ul {
+    display: none;
+    position: absolute;
+    top: 60px; /* the height of the main nav */
+  }
+
+  /* Display Dropdowns on Hover */
+  nav ul li:hover > ul {
+    display: inherit;
+  }
+
+  /* Fisrt Tier Dropdown */
+  nav ul ul li {
+    width: 170px;
+    float: none;
+    display: list-item;
+    position: relative;
+  }
+</style>

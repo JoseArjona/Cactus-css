@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Code } from "astro/components";
+---
+
+<Layout>
+  <div class="container">
+    <h1>Personalizar la plantilla</h1>
+    <p>
+      Si deseas personalizar los colores y la tipografia solo tienes que
+      cambiarlos en el archivo css :
+    </p>
+    <Code
+      code={`
+    :root {
+        --font1: "Open Sans", sans-serif;
+        --font2: "Quicksand", sans-serif;
+        --fnd: #f4f7ed;
+        --cont-wh: 1200px;
+        --primary: #2b3752;
+        --secondary: #2e6e65;
+        --green: #86ee60;
+        --red: #f03847;
+        --blue: #536a9e;
+        --yellow: #f0e138;
+        --orange: #f08238;
+        --gray: #2f343d;
+    }
+    `}
+      lang="css"
+      theme="dracula-soft"
+    />
+    <p>al ser un archivo css, realmente es muy facil cambiar los valores que no te agraden, como las sombras, efectos hover y demás.</p>
+    <p>💡<b>TIP:</b> una vez realices los cambios en el archivo css, si tu editor tiene un formateador recuerda comprimir el archivo css.</p>
+    <p>Pagina para comprimir CSS: </p>
+    <a href="https://csscompressor.com/">CSS Compressor</a>
+  </div>
+</Layout>
+
+<style>
+  .container {
+    max-width: 90%;
+    width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+  }
+</style>

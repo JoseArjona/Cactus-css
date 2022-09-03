@@ -1,0 +1,211 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Codex from "../components/Code.astro";
+import InfoCard from "../components/InfoCard.astro";
+import "../styles/cactus.css";
+---
+
+<Layout>
+  <br />
+  <h2 class="display-3 txtCenter margin-top" id="hd">Encabezados</h2>
+  <div class="container grid col-3 md-col-2 sm-col-1">
+    <div>
+      <h1>Encabezado H1</h1>
+      <h2>Encabezado H2</h2>
+      <h3>Encabezado H3</h3>
+      <h4>Encabezado H4</h4>
+      <h5>Encabezado H5</h5>
+      <h6>Encabezado H6</h6>
+
+      <h1 class="display-1">Display 1</h1>
+      <h2 class="display-2">Display 2</h2>
+      <h3 class="display-3">Display 3</h3>
+    </div>
+    <div class="span-2">
+      <InfoCard
+        title="Encabezados"
+        body="Puedes utilizar cualquiera de los encabezados para asignar títulos a tu sitio o también puedes usar los display que son de mayor tamaño"
+      />
+      <div>
+        <Codex
+          html={` 
+ <h1>Encabezado H1</h1> 
+ <h2>Encabezado H2</h2>
+ <h3>Encabezado H3</h3>
+ <h4>Encabezado H4</h4>
+ <h5>Encabezado H5</h5>
+ <h6>Encabezado H6</h6>
+ <h1 class="display-1">Display 1</h1>
+ <h2 class="display-2">Display 2</h2>
+ <h3 class="display-3">Display 3</h3>
+          `}
+          css={`
+ .display-1 { font-weight: 700; font-size: 64px;}
+ .display-2 { font-weight: 700; font-size: 54px;}
+ .display-3 { font-weight: 700; font-size: 44px;}
+          `}
+        />
+      </div>
+    </div>
+  </div>
+  <h2 class="display-3 txtCenter margin-top" id="cont">Contenedores/Grid</h2>
+  <div class="container">
+    <div class="grid col-3 md-col-2 sm-col-1">
+      <div class="card">Card 1</div>
+      <div class="card">Card 2</div>
+      <div class="card">Card 3</div>
+      <div class="card">Card 4</div>
+      <div class="card">Card 5</div>
+      <div class="card">Card 6</div>
+    </div>
+    <InfoCard
+      title="Grid y Contenedores"
+      body="Puedes utilizar la clase container para contener tus elementos y centrarlos, también puedes utilizar la clase grid para crear una grilla de elementos (ambas clases son compatibles). Las clases grid funcionan muy fácil, solo usa col-# para definir el número de columnas que quieres que tenga tú grilla, también puedes usar md-col-# para definir el número de columnas que quieres que tenga tú grilla en dispositivos medianos y sm-col-# para dispositivos pequeños. Por último, con span-# puedes definir el número de columnas que quieres que ocupe un elemento en específico."
+    />
+    <div>
+      <Codex
+        html={`
+ <div class="container">
+      <div class="grid col-3 md-col-2 sm-col-1">
+          <div class="card">Card 1</div>
+          <div class="card">Card 2</div>
+          <div class="card">Card 3</div>
+          <div class="card">Card 4</div>
+          <div class="card">Card 5</div>
+          <div class="card">Card 6</div>
+      </div>
+ </div>   
+          `}
+        css={`
+ /* Para no hacer muy largo el codigo simplemente donde hay un '#' sustituye por el numero de columnas  */       
+ .grid { display: grid; gap: 20px; margin-bottom: 20px; }
+
+ /* Tamaño Grande - Computadoras y TV */
+ .col-# { grid-template-columns: repeat(#, 1fr); }
+ .span-# { grid-column: span #; }
+
+ /* Tamaño Mediano - Tablets */
+ @media screen and (max-width: 992px) { .md-col-# { grid-template-columns: repeat(#, 1fr); } 
+ .md-span-# { grid-column: span #; }
+
+ /* Tamaño Pequeño - Celulares */
+ @media screen and (max-width: 576px) { .sm-col-# { grid-template-columns: repeat(#, 1fr); }
+
+ /*Contenedor*/
+ .container { max-width: 90%; width: 1200px ; margin: 20px auto; overflow: hidden; }
+
+ 
+
+`}
+      />
+    </div>
+  </div>
+  <h2 class="display-3 txtCenter margin-top" id="cbc">
+    Card, Botones y Colores
+  </h2>
+  <div class="container">
+    <div class="card txtCenter">
+      <h1 class="display-1 no-margin">Lorem ipsum dolor sit amet.</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit itaque,
+        placeat quis beatae, eligendi fuga expedita modi ducimus magni quasi eos
+        dolorem numquam quae porro cupiditate doloribus blanditiis impedit
+        distinctio.
+      </p>
+      <button class="btn">Boton</button>
+      <button class="btn green"> Verde</button>
+      <button class="btn red"> Rojo</button>
+      <button class="btn blue"> Azul</button>
+      <button class="btn yellow"> Amarillo</button>
+      <button class="btn orange"> Naranja</button>
+      <button class="btn gray"> Gris</button>
+    </div>
+    <br />
+    <InfoCard
+      title="Card, Botones y colores"
+      body=" La clase card es simplemente un estilo que le puedes dar a cualquier div. La clase btn es para los botones, si quieres el verde solo usa btn green, si quieres el rojo usa btn red, si quieres el azul usa btn blue, si quieres el amarillo usa btn yellow, si quieres el naranja usa btn orange y si quieres el gris usa btn gray. La razon por la cual la clase va separada es porque puedes utilizar la clase para colorear el background"
+    />
+    <div>
+      <Codex
+        html={`
+ <div class="card txtCenter">
+      <h1 class="display-1 no-margin">Tu titulo</h1>
+      <p>texto</p>
+      <button class="btn">Boton</button>
+      <button class="btn green"> Verde</button>
+      <button class="btn red"> Rojo</button>
+      <button class="btn blue"> Azul</button>
+      <button class="btn yellow"> Amarillo</button>
+      <button class="btn orange"> Naranja</button>
+      <button class="btn gray"> Gris</button>
+ </div>
+    `}
+        css={`
+ /*Card*/
+ .card { padding: 40px; background: #fff; border-radius: 3px; box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+         0px 3px 1px -2px rgba(0, 0, 0, 0.12), 0px 1px 5px 0px rgba(0, 0, 0, 0.2); }
+
+ /*Botones*/     
+
+ .btn { background: #2e6e65; color: #fff; border: none; cursor: pointer; display: inline-block;
+       padding: 10px 15px; border-radius: 3px; text-align: center; line-height: 22px; transition: 0.3s ease all; }
+
+ .btn:hover { box-shadow: 1px 1px #2b3752, 2px 2px #2b3752, 3px 3px #2b3752; transform: translateX(-3px); }
+
+`}
+      />
+    </div>
+  </div>
+  <h2 class="display-3 txtCenter margin-top" id="form">
+      Formulario
+  </h2>
+  <div class="container">
+    <div class="grid col-2">
+      <div class="span-1 md-span-2">
+        <div>
+          <InfoCard
+            title="Formulario"
+            body="Usa la clase input dentro de una etiqueta form para  darle estlio a tus los formularios"
+          />
+        </div>
+      </div>
+      <div class="card span-1 md-span-2">
+        <h3>Registrate</h3>
+        <form action="">
+          <input class="input" type="text" placeholder="Correo Electronico" />
+          <input class="input" type="password" placeholder="Contraseña" />
+          <button class="btn">Suscribete</button>
+          <button class="btn green">Registrate</button>
+        </form>
+      </div>
+    </div>
+    <Codex
+    html={`
+ <h3>Registrate</h3>
+ <form action="">
+ <input class="input" type="text" placeholder="Correo Electronico">
+ <input class="input" type="password" placeholder="Contraseña">
+ <button class="btn">Suscribete</button>
+ <button class="btn green">Registrate</button>
+ </form>
+         `}
+     css={`
+ form .input {
+ padding: 10px 15px;
+ border-radius: 3px;
+ border: 1px solid #d6d6d6;
+ transition: 0.3s ease all;
+ width: 100%;
+ margin-bottom: 20px;
+ box-shadow: 6px 2px 16px 0px rgba(136, 165, 191, 0.48),
+  -6px -2px 16px 0px rgba(255, 255, 255, 0.8);
+ }
+ 
+ form .input:focus {
+ border: 1px solid var(--green);
+ outline: none;
+ }
+        `}
+  />
+  </div>
+</Layout>
