@@ -52,13 +52,36 @@ import { Code } from "astro/components";
       </div>
       <div
         class="card grid col-2 span-2 sm-col-1"
+        style="color:#fff ; background-color:#282a36"
+      >
+        <div>
+          <div class="title">Copiar el link en tu head</div>
+          <div class="body">
+            Puedes copiar el link y pegarlo en tu etiqueta <b>head</b> de tu html.
+            Y simplemente colocar las clases en tus etiquetas, para guiarte puedes ir a
+            componentes
+          </div>
+          <div class="code">
+            <Code
+              code={`<link rel="stylesheet" href="https://cactus-css.vercel.app/assets/css/cactus.css">`}
+              lang="html"
+              theme="dracula"
+            />
+          </div>
+        </div>
+        <div>
+          <a href="/Componentes" class="btn a" type="button">Componentes</a>
+        </div>
+      </div>
+      <div
+        class="card grid col-2 span-2 sm-col-1"
         style="color: #2b3752; background-color:#fff"
       >
         <div>
           <div class="title">Copiar partes del codigo</div>
           <div class="body">
-            Puedes copiar partes del codigo css e incrustarlas en tu css. En Componentes puedes
-            ver el codigo por partes como <b>componentes</b>
+            Puedes copiar partes del codigo css e incrustarlas en tu css. En
+            Componentes puedes ver el codigo por partes como <b>componentes</b>
           </div>
         </div>
         <div>
@@ -106,6 +129,17 @@ import { Code } from "astro/components";
     border-radius: 5px;
     margin-bottom: 3%;
   }
+  .code {
+    width: 100%;
+    border: 1px solid #77ed62;
+    margin-top: 10px;
+  }
+  
+  .btn.a {
+    margin-top: 5vh;
+    margin-left: 3vw;
+  }
+
   .card {
     padding: 40px;
     border-radius: 3px;
