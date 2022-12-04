@@ -30,10 +30,28 @@ import { Code } from "astro/components";
       lang="css"
       theme="dracula-soft"
     />
-    <p>al ser un archivo css, realmente es muy facil cambiar los valores que no te agraden, como las sombras, efectos hover y demás.</p>
-    <p>💡<b>TIP:</b> una vez realices los cambios en el archivo css, si tu editor tiene un formateador recuerda comprimir el archivo css.</p>
-    <p>Pagina para comprimir CSS: </p>
+    <p>
+      al ser un archivo css, realmente es muy facil cambiar los valores que no
+      te agraden, como las sombras, efectos hover y demás.
+    </p>
+    <p>
+      💡<b>TIP:</b> una vez realices los cambios en el archivo css, si tu editor
+      tiene un formateador recuerda comprimir el archivo css.
+    </p>
+    <p>Pagina para comprimir CSS:</p>
     <a href="https://csscompressor.com/">CSS Compressor</a>
+    <br />
+    <p>
+      Tambien puedes usar una clase y modifcarla, siendo más especifico o usando
+      ´!important´
+    </p>
+    <Code
+      code={`
+      .btn{ background-color: #00d26a !important;}
+      `}
+      lang="css"
+      theme="dracula-soft"
+    />
   </div>
 </Layout>
 

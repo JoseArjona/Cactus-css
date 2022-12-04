@@ -1,5 +1,5 @@
 <div id="container">
-  <nav>
+  <nav id="NavBar">
     <ul>
       <li><a href="/">Inicio</a></li>
       <li>
@@ -9,6 +9,7 @@
           <li><a href="/Componentes#cont">Contenedor/Grid</a></li>
           <li><a href="/Componentes#cbc">Card y Botones</a></li>
           <li><a href="/Componentes#form">Formulario</a></li>
+          <li><a href="/Componentes#alin">Alineaciones</a></li>
         </ul>
       </li>
       <li>
@@ -62,7 +63,11 @@
     line-height: 60px;
     text-decoration: none;
   }
-
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
   nav a:hover {
     background-color: #2e6e65;
   }

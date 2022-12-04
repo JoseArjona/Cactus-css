@@ -104,12 +104,19 @@ import "../styles/cactus.css";
     Card, Botones y Colores
   </h2>
   <div class="container">
+    <InfoCard
+      title="Card, Botones y colores"
+      body=" La clase card es simplemente un estilo que le puedes dar a cualquier div. La clase btn es para los botones, si quieres un color especifico usa btn + el color {primary,green,red,blue,yellow,orange,gray}. La razon por la cual la clase va separada es porque puedes utilizar la clase para colorear el background "
+    />
+    <br />
     <div class="card txtCenter">
       <h1 class="display-1 no-margin">Lorem ipsum dolor sit amet.</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit itaque,
-        placeat quis beatae, eligendi fuga expedita modi ducimus magni quasi eos
-        dolorem numquam quae porro cupiditate doloribus blanditiis impedit
+        placeat quis beatae, eligendi fuga expedita <span class="txt-blue"
+          >modi</span
+        > ducimus magni quasi eos dolorem numquam quae porro cupiditate doloribus
+        blanditiis <span class="txt-orange"> impedit</span>
         distinctio.
       </p>
       <button class="btn">Boton</button>
@@ -120,11 +127,7 @@ import "../styles/cactus.css";
       <button class="btn orange"> Naranja</button>
       <button class="btn gray"> Gris</button>
     </div>
-    <br />
-    <InfoCard
-      title="Card, Botones y colores"
-      body=" La clase card es simplemente un estilo que le puedes dar a cualquier div. La clase btn es para los botones, si quieres el verde solo usa btn green, si quieres el rojo usa btn red, si quieres el azul usa btn blue, si quieres el amarillo usa btn yellow, si quieres el naranja usa btn orange y si quieres el gris usa btn gray. La razon por la cual la clase va separada es porque puedes utilizar la clase para colorear el background"
-    />
+
     <div>
       <Codex
         html={`
@@ -155,32 +158,69 @@ import "../styles/cactus.css";
 `}
       />
     </div>
-  </div>
-  <h2 class="display-3 txtCenter margin-top" id="form">
-      Formulario
-  </h2>
-  <div class="container">
-    <div class="grid col-2">
-      <div class="span-1 md-span-2">
-        <div>
-          <InfoCard
-            title="Formulario"
-            body="Usa la clase input dentro de una etiqueta form para  darle estlio a tus los formularios"
-          />
+    <section>
+      <h3 class="display-3 txtCenter margin-top" id="form">Texto</h3>
+      <div>
+        <div class="grid col-2">
+          <div class="span-1 md-span-2">
+            <InfoCard
+              title="Alineacion de texto y colores"
+              body="Para alinear el texto puedes usar las clases txtCenter, txtLeft, txtRight, txtJustify. Para cambiar el color del texto puedes usar las clases txt-el color {primary,green,red,blue,yellow,orange,gray}"
+            />
+          </div>
+          <div class="gray span-1 md-span-2" style="padding: 5px;">
+            <p class="txtCenter txt-green">texto verde centrado</p>
+            <p class="txtRight txt-blue">texto azul derecha</p>
+            <p class="txtLeft txt-red">texto rojo izquierda</p>
+            <p class="txtJustify txt-orange">texo justificado naranja</p>
+          </div>
         </div>
       </div>
-      <div class="card span-1 md-span-2">
-        <h3>Registrate</h3>
-        <form action="">
-          <input class="input" type="text" placeholder="Correo Electronico" />
-          <input class="input" type="password" placeholder="Contraseña" />
-          <button class="btn">Suscribete</button>
-          <button class="btn green">Registrate</button>
-        </form>
+      <div class="container">
+        <Codex
+          html={`
+          <p class="txtCenter txt-green">texto verde centrado</p>
+          <p class="txtRight txt-blue">texto azul derecha</p>
+          <p class="txtLeft txt-red">texto rojo izquierda</p>
+          <p class="txtJustify txt-orange">texo justificado naranja</p>
+          `}
+          css={`
+          .txtCenter {text-align: center;}
+          .txtLeft {text-align: left;}
+          .txtRight {text-align: right;}
+          .txtJustify {text-align: justify;} 
+          `}
+        />
       </div>
-    </div>
-    <Codex
-    html={`
+      <section></section>
+      <h2 class="display-3 txtCenter margin-top" id="form">Formulario</h2>
+      <div>
+        <div class="grid col-2">
+          <div class="span-1 md-span-2">
+            <div>
+              <InfoCard
+                title="Formulario"
+                body="Usa la clase input dentro de una etiqueta form para  darle estlio a tus los formularios"
+              />
+            </div>
+          </div>
+          <div class="card span-1 md-span-2">
+            <h3>Registrate</h3>
+            <form action="">
+              <input
+                class="input"
+                type="text"
+                placeholder="Correo Electronico"
+              />
+              <input class="input" type="password" placeholder="Contraseña" />
+              <button class="btn">Suscribete</button>
+              <button class="btn green">Registrate</button>
+            </form>
+          </div>
+        </div>
+        <div class="container">
+          <Codex
+            html={`
  <h3>Registrate</h3>
  <form action="">
  <input class="input" type="text" placeholder="Correo Electronico">
@@ -189,7 +229,7 @@ import "../styles/cactus.css";
  <button class="btn green">Registrate</button>
  </form>
          `}
-     css={`
+            css={`
  form .input {
  padding: 10px 15px;
  border-radius: 3px;
@@ -206,6 +246,42 @@ import "../styles/cactus.css";
  outline: none;
  }
         `}
-  />
+          />
+        </div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <h2 class="display-3 txtCenter margin-top" id="alin">Alineaciones</h2>
+        <div>
+          <InfoCard
+            title="Alineacion con Flex"
+            body="podemos alinear el contenido dentro de un div usando left, right, center y right"
+          />
+          <br />
+        </div>
+        <div class="card">
+          <div class="left"><button class="btn">Izquierda</button></div>
+          <div class="center">
+            <button class="btn">Centro</button>
+          </div>
+          <div class="right"><button class="btn">Derecha</button></div>
+        </div>
+        <div class="container">
+          <Codex
+            html={`
+            <div class="left"><button class="btn">Izquierda</button></div>
+            <div class="center"><button class="btn">Centro</button></div>
+            <div class="right"><button class="btn">Derecha</button></div>
+            `}
+            css={`
+              .left { display: flex; justify-content: flex-start;}
+              .center { display: flex; justify-content: center;}
+              .right { display: flex; justify-content: flex-end;}
+            `}
+          />
+        </div>
+      </div>
+    </section>
   </div>
 </Layout>

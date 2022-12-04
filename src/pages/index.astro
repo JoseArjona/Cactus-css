@@ -22,11 +22,13 @@ import { Code } from "astro/components";
         Para el correcto comportamiento es importante que tengas las siguientes
         etiquetas en tu etiqueta <b>head</b> de tu html.
       </p>
+
       <Code
         code={` 
  <meta charset="UTF-8" />
  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <link rel="stylesheet" href="assets/css/cactus.css"> <!-- Importa de forma local -->
 		`}
         lang="html"
         theme="dracula"
@@ -58,8 +60,8 @@ import { Code } from "astro/components";
           <div class="title">Copiar el link en tu head</div>
           <div class="body">
             Puedes copiar el link y pegarlo en tu etiqueta <b>head</b> de tu html.
-            Y simplemente colocar las clases en tus etiquetas, para guiarte puedes ir a
-            componentes
+            Y simplemente colocar las clases en tus etiquetas, para guiarte puedes
+            ir a componentes
           </div>
           <div class="code">
             <Code
@@ -134,7 +136,7 @@ import { Code } from "astro/components";
     border: 1px solid #77ed62;
     margin-top: 10px;
   }
-  
+
   .btn.a {
     margin-top: 5vh;
     margin-left: 3vw;

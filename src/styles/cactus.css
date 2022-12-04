@@ -361,7 +361,7 @@ p {
 
 nav {
     /* margin: 30px auto; */
-    background-color: #2b3752;
+    background-color: var(--primary);
     position: sticky;
     top: 0px;
 }
@@ -376,7 +376,7 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    background-color: #2b3752;
+    background-color: var(--primary);
 }
 
 nav a {
@@ -389,7 +389,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #2e6e65;
+    background-color: var(--secondary);
 }
 
 /* Hide Dropdowns by Default */
@@ -496,6 +496,7 @@ form .input:focus {
     transform: translateX(-3px);
 }
 
+/* Colores BG y COLORS */
 .green {
     background: var(--green);
     color: #2b3752;
@@ -522,35 +523,43 @@ form .input:focus {
     background: var(--gray);
 }
 
-/* ====================
-	* HELPERS *
-==================== */
-.no-margin {
-    margin: 0;
+.txt-white {
+    color: #fff;
+}
+.txt-yellow{
+    color: var(--yellow);
+}
+.txt-green{
+    color: var(--green);
+}
+.txt-red{
+    color: var(--red);
+}
+.txt-blue{
+    color: var(--blue);
+}
+.txt-orange{
+    color: var(--orange);
+}
+.txt-gray{
+    color: var(--gray);
 }
 
-.no-margin-top {
-    margin-top: 0;
+/* Alineacion */
+
+.center {
+    display: flex;
+    justify-content: center;
 }
 
-.no-margin-bottom {
-    margin-bottom: 0;
+.left {
+    display: flex;
+    justify-content: flex-start;
 }
 
-.no-margin-left {
-    margin-left: 0;
-}
-
-.no-margin-right {
-    margin-right: 0;
-}
-
-.margin-top {
-    margin-bottom: 20px;
-}
-
-.margin-bottom {
-    margin-top: 20px;
+.right {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .txtCenter {
@@ -568,3 +577,4 @@ form .input:focus {
 .txtJustify {
     text-align: justify;
 }
+
