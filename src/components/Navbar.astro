@@ -1,94 +1,324 @@
-<div id="container">
-  <nav id="NavBar">
-    <ul>
-      <li><a href="/">Inicio</a></li>
-      <li>
-        <a href="/Componentes">Componentes &#8595; <i class="down"></i></a>
-        <ul>
-          <li><a href="/Componentes#hd">Encabezados</a></li>
-          <li><a href="/Componentes#cont">Contenedor/Grid</a></li>
-          <li><a href="/Componentes#cbc">Card y Botones</a></li>
-          <li><a href="/Componentes#form">Formulario</a></li>
-          <li><a href="/Componentes#alin">Alineaciones</a></li>
+<header class="header">
+  <nav class="navbar">
+    <a href="/" class="nav-logo">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        fill="var(--primary)"
+        style="margin-right: 10px;"
+        viewBox="0 0 256 256"
+        ><path
+          d="M216,208H168V184h4a68.07,68.07,0,0,0,68-68,28,28,0,0,0-56,0,12,12,0,0,1-12,12h-4V56a40,40,0,0,0-80,0V88H84A12,12,0,0,1,72,76a28,28,0,0,0-56,0,68.07,68.07,0,0,0,68,68h4v64H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM96,128H84A52.06,52.06,0,0,1,32,76a12,12,0,0,1,24,0,28,28,0,0,0,28,28H96a8,8,0,0,0,8-8V56a24,24,0,0,1,48,0v80a8,8,0,0,0,8,8h12a28,28,0,0,0,28-28,12,12,0,0,1,24,0,52.06,52.06,0,0,1-52,52H160a8,8,0,0,0-8,8v32H104V136A8,8,0,0,0,96,128Z"
+        ></path>
+      </svg> Cactus CSS</a
+    >
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="/" class="nav-link">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a href="/start" class="nav-link">Uso</a>
+      </li>
+      <li class="nav-item">
+        <a href="/Docs" style="color:var(--font-color);"
+          >Docs &#8595; <i class="down"></i>
+        </a>
+        <ul class="dropdown">
+          <li><a href="/Docs#hd">Encabezados</a></li>
+          <li><a href="/Docs#cont">Contenedor/Grid</a></li>
+          <li><a href="/Docs#cbc">Card y Botones</a></li>
+          <li><a href="/Docs#form">Formulario</a></li>
+          <li><a href="/Docs#alin">Alineaciones</a></li>
+          <li><a href="/Docs#alin">Tablas</a></li>
+          <li><a href="/Docs#xtr">Extra</a></li>
         </ul>
       </li>
-      <li>
-        <a href="/Personalizar">Personalizar</a>
+      <li class="nav-item">
+        <a href="/Personalizar" class="nav-link">Personalizar</a>
       </li>
-      <li>
-        <a href="./assets/css/cactus.css" download="cactus.css" type="button"
-          >Descarga ⬇️</a
-        >
+      <li class="nav-item">
+        <a href="/download" class="nav-link">Descargar</a>
+      </li>
+      <li class="nav-item">
+        <div class="toggle-btn" id="dark-mode-toggle">
+          <input type="checkbox" />
+          <span></span>
+        </div>
       </li>
     </ul>
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
   </nav>
-</div>
-
+</header>
 <style>
-  #container {
-    margin: 0 auto;
-    position: sticky;
-    top: 0;
-  }
-
-  p {
-    text-align: center;
-  }
-
-  nav {
-    /* margin: 30px auto; */
-    background-color: #2b3752;
-    position: sticky;
-    top: 0;
-  }
-
-  nav ul {
-    padding: 0;
-    margin: 0 auto;
+  li {
     list-style: none;
-    position: relative;
-    text-align: center;
   }
 
-  nav ul li {
-    display: inline-block;
-    background-color: #2b3752;
+  ul {
+    list-style: none;
   }
 
-  nav a {
-    display: block;
-    padding: 0 20px;
-    color: #fff;
-    font-size: 16px;
-    line-height: 60px;
+  a {
     text-decoration: none;
   }
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  nav a:hover {
-    background-color: #2e6e65;
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    box-shadow: 0px 58px 78px -12px rgba(227, 249, 226, 0.066);
   }
 
-  /* Hide Dropdowns by Default */
-  nav ul ul {
+  .hamburger {
+    display: none;
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+    box-shadow: 0px 58px 78px -12px rgba(227, 249, 226, 0.25);
+  }
+
+  .nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-item {
+    margin-left: 5rem;
+  }
+
+  .nav-link {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--font-color);
+  }
+
+  .nav-link:hover {
+    color: var(--primary);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    margin: 2px;
+    font-family: var(--font1);
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--font-color);
+  }
+
+  .nav-logo:hover {
+    color: var(--primary);
+  }
+
+  /* Dropdown */
+  .dropdown {
     display: none;
     position: absolute;
-    top: 60px; /* the height of the main nav */
+    padding: 2rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1;
   }
 
-  /* Display Dropdowns on Hover */
-  nav ul li:hover > ul {
-    display: inherit;
+  .dropdown li {
+    margin: 1rem 0;
   }
 
-  /* Fisrt Tier Dropdown */
-  nav ul ul li {
-    width: 170px;
-    float: none;
-    display: list-item;
+  .dropdown li a {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--font-color);
+  }
+
+  .dropdown li a:hover {
+    color: var(--primary);
+    margin: 10px;
+  }
+
+  .nav-item:hover .dropdown {
+    display: block;
+  }
+
+  /* Toggle Dark Mode */
+  /* The switch - the box around the slider */
+  .toggle-btn {
     position: relative;
+    width: 45px;
+    height: 24px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 40px;
+  }
+
+  input[type="checkbox"] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: 0px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+  }
+
+  /* dark-mode-toggle btn */
+
+  #dark-mode-toggle span {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    overflow: hidden;
+    opacity: 1;
+    background-color: #fff;
+    box-shadow: 0px 2px 25px #d9d9d9;
+    border-radius: 40px;
+    transition: 0.2s ease background-color, 0.2s ease opacity;
+  }
+
+  #dark-mode-toggle span:before,
+  #dark-mode-toggle span:after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: 0.5s ease transform, 0.2s ease background-color;
+  }
+
+  #dark-mode-toggle span:before {
+    background-color: #fff;
+    transform: translate(-28px, 0px);
+    z-index: 1;
+  }
+
+  #dark-mode-toggle span:after {
+    background-color: #000;
+    transform: translate(3px, 0px);
+    z-index: 0;
+  }
+
+  #dark-mode-toggle input[type="checkbox"]:checked + span {
+    background-color: #000;
+  }
+
+  #dark-mode-toggle input[type="checkbox"]:active + span {
+    opacity: 0.5;
+  }
+
+  #dark-mode-toggle input[type="checkbox"]:checked + span:before {
+    background-color: #000;
+    transform: translate(16px, -1px);
+  }
+
+  #dark-mode-toggle input[type="checkbox"]:checked + span:after {
+    background-color: #fff;
+    transform: translate(23px, 0px);
+  }
+  @media only screen and (max-width: 768px) {
+    .nav-menu {
+      position: fixed;
+      left: -100%;
+      top: 5rem;
+      flex-direction: column;
+      background-color: var(--background);
+      width: 100%;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+      left: 0;
+    }
+
+    .nav-item {
+      margin: 2.5rem 0;
+    }
+
+    .hamburger {
+      display: block;
+      cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+      -webkit-transform: translateY(8px) rotate(45deg);
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+      -webkit-transform: translateY(-8px) rotate(-45deg);
+      transform: translateY(-8px) rotate(-45deg);
+    }
   }
 </style>
+
+<script>
+  /* Responsive Menu */
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+  const navLink = document.querySelectorAll(".nav-link");
+
+  hamburger.addEventListener("click", mobileMenu);
+  navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+  function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  }
+
+  function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  }
+</script>
+
+<script is:inline>
+  // creamos una constante para el checkbox
+  const toggle = document.getElementById("dark-mode-toggle");
+  // creamos un evento para el checkbox
+  toggle.addEventListener("change", (e) => {
+    // si el checkbox esta desactivado
+    if (e.target.checked == false) {
+      // guardamos en el localStorage que el modo oscuro esta desactivado
+      localStorage.setItem("light", "false");
+      // removemos las clases de modo oscuro
+      document.documentElement.classList.remove("theme-light");
+    } else {
+      // si el checkbox esta activado guardamos en el localStorage que el modo oscuro esta activado
+      localStorage.setItem("light", "true");
+      // agregamos las clases de modo oscuro
+      document.documentElement.classList.add("theme-light");
+    }
+  });
+  // comprobamos si el modo oscuro esta activado
+  if (localStorage.getItem("light") === "true") {
+    // si esta activado activamos el checkbox
+    toggle.querySelector("input").checked = true;
+    // agregamos las clases de modo oscuro
+    document.documentElement.classList.add("theme-light");
+  }
+</script>

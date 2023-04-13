@@ -1,7 +1,7 @@
 ---
 export interface Props {
-  html: string;
-  css: string;
+  html: string;/* 
+  css: string; */
 }
 
 const { html, css } = Astro.props;
@@ -13,8 +13,8 @@ import { Code } from "astro/components";
     <br />
     <p>HTML📎</p>
     <Code code={`${html}`} lang="html" theme="dracula" />
-    <p>CSS🪄</p>
-    <Code code={`${css}`} lang="css" theme="dracula-soft" />
+    <!-- <p>CSS🪄</p>
+    <Code code={`${css}`} lang="css" theme="dracula-soft" /> -->
   </div>
 </div>
 

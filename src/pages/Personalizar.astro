@@ -4,29 +4,29 @@ import { Code } from "astro/components";
 ---
 
 <Layout>
+  <h1 class="display-3 txt-center">Personalizar</h1>
   <div class="container">
-    <h1>Personalizar la plantilla</h1>
+    <h2>Personalizar la plantilla</h2>
     <p>
       Si deseas personalizar los colores y la tipografia solo tienes que
-      cambiarlos en el archivo css :
+      cambiarlos en un archivo css :
     </p>
     <Code
-      code={`
-    :root {
-        --font1: "Open Sans", sans-serif;
-        --font2: "Quicksand", sans-serif;
-        --fnd: #f4f7ed;
-        --cont-wh: 1200px;
-        --primary: #2b3752;
-        --secondary: #2e6e65;
-        --green: #86ee60;
-        --red: #f03847;
-        --blue: #536a9e;
-        --yellow: #f0e138;
-        --orange: #f08238;
-        --gray: #2f343d;
-    }
-    `}
+      code={`:root {
+  --font1: Montserrat, sans-serif;
+  --font2: Cabin, sans-serif;
+  --font3: "Work Sans", sans-serif;
+  --cont-wh: 1200px;
+  --primary: #56f09f;
+  --background: #122625;
+  --font-color: #fffbec;
+  --green: #45d25a;
+  --red: #dc3243;
+  --yellow: #f2c94c;
+  --blue: #2f80ed;
+  --purple: #2a184a;
+  --radius: 5px;
+}`}
       lang="css"
       theme="dracula-soft"
     />
@@ -39,19 +39,80 @@ import { Code } from "astro/components";
       tiene un formateador recuerda comprimir el archivo css.
     </p>
     <p>Pagina para comprimir CSS:</p>
-    <a href="https://csscompressor.com/">CSS Compressor</a>
+    <a href="https://www.toptal.com/developers/cssminifier">CSS Compressor</a>
     <br />
     <p>
       Tambien puedes usar una clase y modifcarla, siendo más especifico o usando
       ´!important´
     </p>
     <Code
-      code={`
-      .btn{ background-color: #00d26a !important;}
-      `}
+      code={`.btn{ background-color: #00d26a !important;}`}
       lang="css"
       theme="dracula-soft"
     />
+    <h2>Crear Tema</h2>
+    <p>
+      Si deseas crear un tema nuevo, solo tienes que crear un archivo css y
+      definir una clase, poniendo las varibles que deseas cambiar(las variables
+      que admite son las que se muestran arriba en root) :
+    </p>
+    <Code
+      code={`.theme-light {
+  --primary: #09773c;
+  --background: #edf7f5;
+  --font-color: #000;
+} // aqui creamos el tema claro`}
+      lang="css"
+      theme="dracula-soft"
+    />
+    <h3>Cambio de tema con JS</h3>
+    <p>
+      Para cambiar el tema solo tienes que cambiar la clase del body o el html,
+      por ejemplo:
+    </p>
+    <Code
+      code={`/* Definmos un checkbox */
+<div class="toggle-btn" id="dark-mode-toggle">
+    <input type="checkbox" />
+    <span></span>
+</div>
+/*Las clases son de un css aparte */`}
+      lang="html"
+      theme="dracula-soft"
+    />
+    <Code
+      code={`/* Funcion en JS*/
+// creamos una constante para el checkbox
+const toggle = document.getElementById("dark-mode-toggle");
+// creamos un evento para el checkbox
+toggle.addEventListener("change", (e) => {
+  // si el checkbox esta desactivado
+  if (e.target.checked == false) {
+    // guardamos en el localStorage que el modo oscuro esta desactivado
+    localStorage.setItem("light", "false");
+    // removemos las clases de modo oscuro
+    document.documentElement.classList.remove("theme-light");
+  } else {
+    // si el checkbox esta activado guardamos en el localStorage que el modo oscuro esta activado
+    localStorage.setItem("light", "true");
+    // agregamos las clases de modo oscuro
+    document.documentElement.classList.add("theme-light");
+  }
+});
+// comprobamos si el modo oscuro esta activado
+if (localStorage.getItem("light") === "true") {
+  // si esta activado activamos el checkbox
+  toggle.querySelector("input").checked = true;
+  // agregamos las clases de modo oscuro
+  document.documentElement.classList.add("theme-light");
+}`}
+      lang="js"
+      theme="dracula-soft"
+    />
+    💡<b>TIP:</b> si deseas cambiar el tema con un boton, solo tienes que cambiar
+    el input por un button y agregarle un evento onclick. <br />
+    Nota : si estas usando Astro Js, usa
+    <Code code={`<script is:inline>...</script>`} lang="html" />
   </div>
 </Layout>
 

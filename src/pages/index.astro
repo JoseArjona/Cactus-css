@@ -1,204 +1,114 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Code } from "astro/components";
 ---
 
 <Layout>
   <main>
-    <div class="container">
-      <h1 class="display-1">CACTUS CSS</h1>
-      <h2 class="display-3">PLANTILLA CSS CON DISEÑO RESPONSIVO</h2>
-      <p>
-        Plantilla de CSS sencilla útil para darle un estilo a tus páginas web O
-        simplemente, puedes usarla para guiarte en tus diseños. <br /> No es necesario
-        alguna atribución y su uso es libre. Visita <b>'Componentes'</b> para ver
-        lo que contiene de una forma visual.
-      </p>
-    </div>
-
-    <div class="container">
-      <h2>Uso 🦾</h2>
-      <p>
-        Para el correcto comportamiento es importante que tengas las siguientes
-        etiquetas en tu etiqueta <b>head</b> de tu html.
-      </p>
-
-      <Code
-        code={` 
- <meta charset="UTF-8" />
- <meta http-equiv="X-UA-Compatible" content="IE=edge" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <link rel="stylesheet" href="assets/css/cactus.css"> <!-- Importa de forma local -->
-		`}
-        lang="html"
-        theme="dracula"
-      />
-      <div
-        class="card grid col-2 span-2 sm-col-1"
-        style="color: #fff; background-color: #2b3752"
-      >
+    <div class="container" style="margin-bottom: 5vw;">
+      <div class="grid col-2 md-col-2 sm-col-1">
         <div>
-          <div class="title">Descargar el archivo css</div>
-          <div class="body">
-            Puedes descargar el archivo css e importarlo en tu documento html.
+          <h1 class="display-1" style="margin-top: 150px;">CACTUS CSS</h1>
+          <div class="middle">
+            <p>
+              Cactus CSS es un marco CSS ligero, responsivo y personalizable que
+              te ayuda a crear sitios web de forma rápida y sencilla. <b>
+                ¡Pesa menos de 10 kb</b
+              >, por lo que puedes diseñar tu sitio web, sin sacrificar el
+              rendimiento!
+            </p>
           </div>
+          <a href="/start" class="btn green" type="button">Comenzar</a>
         </div>
         <div>
-          <a
-            href="./assets/css/cactus.css"
-            download="cactus.css"
-            class="btn"
-            type="button">Descargar ⬇️</a
-          >
-        </div>
-      </div>
-      <div
-        class="card grid col-2 span-2 sm-col-1"
-        style="color:#fff ; background-color:#282a36"
-      >
-        <div>
-          <div class="title">Copiar el link en tu head</div>
-          <div class="body">
-            Puedes copiar el link y pegarlo en tu etiqueta <b>head</b> de tu html.
-            Y simplemente colocar las clases en tus etiquetas, para guiarte puedes
-            ir a componentes
-          </div>
-          <div class="code">
-            <Code
-              code={`<link rel="stylesheet" href="https://cactus-css.vercel.app/assets/css/cactus.css">`}
-              lang="html"
-              theme="dracula"
-            />
-          </div>
-        </div>
-        <div>
-          <a href="/Componentes" class="btn a" type="button">Componentes</a>
-        </div>
-      </div>
-      <div
-        class="card grid col-2 span-2 sm-col-1"
-        style="color: #2b3752; background-color:#fff"
-      >
-        <div>
-          <div class="title">Copiar partes del codigo</div>
-          <div class="body">
-            Puedes copiar partes del codigo css e incrustarlas en tu css. En
-            Componentes puedes ver el codigo por partes como <b>componentes</b>
-          </div>
-        </div>
-        <div>
-          <a href="/Componentes" class="btn" type="button">Componentes</a>
+          <img src="/assets/mainCactus.svg" alt="Cactus-CanvaIA-Personaje" />
         </div>
       </div>
     </div>
   </main>
+  <section>
+    <div class="display-3 txt-center">Caracteristicas</div>
+    <br />
+    <div class="container">
+      <div class="grid col-2 md-col-2 sm-col-1">
+        <div>
+          <img
+            src="/assets/responsive.png"
+            alt="Blush-Responsive"
+            class="sm-hidden"
+          />
+        </div>
+        <div class="txt-center">
+          <h2 style="margin-top: 100px;">Diseño Responsivo</h2>
+          <p>
+            Cactus CSS está diseñado para ser receptivo, por lo que su sitio web
+            se verá genial en cualquier dispositivo. Ya sea una computadora
+            portátil, una tableta o un dispositivo móvil.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="grid col-2 md-col-2 sm-col-1">
+        <div class="txt-center">
+          <h2 style="margin-top: 100px;">Personalizable</h2>
+          <p>
+            Con Cactus CSS, puede personalizar fácilmente el aspecto de su sitio
+            web con solo unos pocos clics. Cambie la combinación de colores, el
+            tamaño de fuente, las sombras y más.
+          </p>
+        </div>
+        <div>
+          <img
+            src="/assets/customImg.png"
+            alt="Blush-Custom"
+            class="sm-hidden"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="grid col-2 md-col-2 sm-col-1" style="margin:2px;">
+        <div class="txt-center card br-none">
+          <div class="center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              fill="var(--font-color)"
+              viewBox="0 0 256 256"
+              ><path
+                d="M221.28,34.75a64,64,0,0,0-90.49,0L60.69,104A15.9,15.9,0,0,0,56,115.31v73.38L26.34,218.34a8,8,0,0,0,11.32,11.32L67.32,200H140.7A15.92,15.92,0,0,0,152,195.32l0,0,69.23-70A64,64,0,0,0,221.28,34.75ZM142.07,46.06A48,48,0,0,1,211.79,112H155.33l34.35-34.34a8,8,0,0,0-11.32-11.32L120,124.69V67.87ZM72,115.35l32-31.67v57l-32,32ZM140.7,184H83.32l56-56h56.74Z"
+              ></path>
+            </svg>
+          </div>
+          <h3>Ligero y Rápido</h3>
+          <p>
+            Con un peso de menos de 10 kb, Cactus CSS es uno de los marcos más
+            ligeros que existen. ¡Eso significa tiempos de carga más rápidos
+            para sus visitantes y mejores clasificaciones de SEO para usted!
+          </p>
+        </div>
+        <div class="txt-center card br-none">
+          <div class="center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              fill="var(--font-color)"
+              viewBox="0 0 256 256"
+              ><path
+                d="M221.07,144.41A96.68,96.68,0,0,0,181,88h59a8,8,0,0,0,0-16H159a32,32,0,0,0-62,0H16a8,8,0,0,0,0,16H75a96.68,96.68,0,0,0-40.07,56.41A32,32,0,1,0,51.08,146,80.6,80.6,0,0,1,99,93.44a32,32,0,0,0,58.06,0A80.6,80.6,0,0,1,204.92,146a32,32,0,1,0,16.15-1.57ZM56,176a16,16,0,1,1-16-16A16,16,0,0,1,56,176Zm72-80a16,16,0,1,1,16-16A16,16,0,0,1,128,96Zm88,96a16,16,0,1,1,16-16A16,16,0,0,1,216,192Z"
+              ></path>
+            </svg>
+          </div>
+          <h3>Fácil de usar</h3>
+          <p>
+            Cactus CSS está diseñado para ser fácil de usar, incluso para
+            principiantes. ¡Simplemente descargue las plantillas y comience a
+            crear hermosos sitios web en muy poco tiempo!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
-
-<style>
-  .container {
-    max-width: 90%;
-    width: 1200px;
-    margin: 20px auto;
-    overflow: hidden;
-  }
-
-  .display-3 {
-    font-weight: 700;
-    font-size: 34px;
-    text-align: center;
-  }
-
-  .display-1 {
-    font-weight: 700;
-    font-size: 54px;
-    font-style: bold;
-    text-align: center;
-  }
-  .container h2 {
-    font-size: 34px;
-  }
-
-  p {
-    font-size: 20px;
-    text-align: justify;
-  }
-
-  code {
-    display: block;
-    background-color: #2f343d;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 3%;
-  }
-  .code {
-    width: 100%;
-    border: 1px solid #77ed62;
-    margin-top: 10px;
-  }
-
-  .btn.a {
-    margin-top: 5vh;
-    margin-left: 3vw;
-  }
-
-  .card {
-    padding: 40px;
-    border-radius: 3px;
-
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
-      0px 3px 1px -2px rgba(0, 0, 0, 0.12), 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
-    border: 3px solid #2b3752;
-  }
-  .title {
-    font-family: "Quicksand", sans-serif;
-    margin-top: 0;
-
-    font-size: 25px;
-    margin-bottom: 3%;
-    font-weight: bold;
-  }
-  .body {
-    font-family: "Open Sans", sans-serif;
-
-    margin-top: 5px;
-  }
-  .grid {
-    display: grid;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-  .col-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .span-2 {
-    grid-column: span 2;
-  }
-  .btn {
-    border: none;
-    text-decoration: none;
-    cursor: pointer;
-    display: inline-block;
-    padding: 10px 15px;
-    border-radius: 3px;
-    text-align: center;
-    line-height: 22px;
-    transition: 0.3s ease all;
-    background: #86ee60;
-    color: #2b3752;
-    font-family: "Open Sans", sans-serif;
-    margin-top: 1vh;
-    margin-left: 20vw;
-  }
-  .btn:hover {
-    box-shadow: 1px 1px #000000, 2px 2px #000000, 3px 3px #000000;
-    transform: translateX(-3px);
-  }
-
-  /* Moviles*/
-  @media screen and (max-width: 576px) {
-    .sm-col-1 {
-      grid-template-columns: repeat(1, 1fr);
-    }
-  }
-</style>

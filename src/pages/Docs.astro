@@ -1,0 +1,320 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Codex from "../components/Code.astro";
+import InfoCard from "../components/InfoCard.astro";
+import "../styles/cactus.css";
+---
+
+<Layout>
+  <br />
+  <h2 class="display-3 txt-center margin-top" id="hd">Encabezados</h2>
+  <div class="container grid col-3 md-col-2 sm-col-1">
+    <div>
+      <h1>Encabezado H1</h1>
+      <h2>Encabezado H2</h2>
+      <h3>Encabezado H3</h3>
+      <h4>Encabezado H4</h4>
+      <h5>Encabezado H5</h5>
+      <h6>Encabezado H6</h6>
+
+      <h1 class="display-1">Display 1</h1>
+      <h2 class="display-2">Display 2</h2>
+      <h3 class="display-3">Display 3</h3>
+    </div>
+    <div class="span-2">
+      <InfoCard
+        title="Encabezados"
+        body="Puedes utilizar cualquiera de los encabezados para asignar títulos a tu sitio o también puedes usar los display que son de mayor tamaño"
+      />
+      <div>
+        <Codex
+          html={`<h1>Encabezado H1</h1> 
+<h2>Encabezado H2</h2>
+<h3>Encabezado H3</h3>
+<h4>Encabezado H4</h4>
+<h5>Encabezado H5</h5>
+<h6>Encabezado H6</h6>
+<h1 class="display-1">Display 1</h1>
+<h2 class="display-2">Display 2</h2>
+<h3 class="display-3">Display 3</h3>`}
+        />
+      </div>
+    </div>
+  </div>
+  <h2 class="display-3 txt-center margin-top" id="cont">Contenedores/Grid</h2>
+  <div class="container">
+    <InfoCard
+      title="Grid y Contenedores"
+      body="Puedes utilizar la clase container para contener tus elementos y centrarlos, también puedes utilizar la clase grid para crear una grilla de elementos (ambas clases son compatibles). Las clases grid funcionan muy fácil, solo usa col-# para definir el número de columnas que quieres que tenga tú grilla, usa md-col-# para definir el número de columnas en dispositivos medianos y sm-col-# para dispositivos pequeños. Por último, con span-# puedes definir el número de columnas que quieres que ocupe un elemento en específico."
+    />
+    <br />
+    <div class="grid col-3 md-col-2 sm-col-1">
+      <div class="card">Card 1</div>
+      <div class="card">Card 2</div>
+      <div class="card">Card 3</div>
+      <div class="card">Card 4</div>
+      <div class="card span-2 md-span-1">Card 5 con span de 2</div>
+    </div>
+
+    <div>
+      <Codex
+        html={`<div class="container">
+      <div class="grid col-3 md-col-2 sm-col-1">
+          <div class="card">Card 1</div>
+          <div class="card">Card 2</div>
+          <div class="card">Card 3</div>
+          <div class="card">Card 4</div>
+          <div class="card">Card 5</div>
+          <div class="card span-2 md-span-1">Card 6</div>
+      </div>
+ </div>`}
+      />
+    </div>
+  </div>
+  <h2 class="display-3 txt-center margin-top" id="cbc">
+    Card, Botones y Colores
+  </h2>
+  <div class="container">
+    <InfoCard
+      title="Card, Botones y colores"
+      body={`La clase card es simplemente un estilo que le puedes dar a cualquier div. La clase btn es para los botones, si quieres un color de fondo diferente usa cualquiera de estos {primary,green,red,blue,yellow,black,white,outline}. 
+      Si deseas cambiar el color de un texto puedes usar la clase txt- + el color {primary,green,red,blue,yellow,black,white}.
+      Si desas cambiar el border de un elemento puedes usar la clase border- + el color {primary,green,red,blue,yellow,black,white} o br-none si no quieres bordes.`}
+    />
+    <br />
+    <div class="card br-blue txt-center">
+      <h1 class="display-1 no-margin">Lorem ipsum dolor sit amet.</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit itaque,
+        placeat quis beatae, eligendi fuga expedita <span class="txt-blue"
+          >modi</span
+        > ducimus magni quasi eos dolorem numquam quae porro cupiditate doloribus
+        blanditiis <span class="txt-second"> impedit</span>
+        distinctio.
+      </p>
+      <button class="btn">Principal</button>
+      <button class="btn second txt-white">Secundario</button>
+      <button class="btn outline">Outline</button>
+      <button class="btn green"> Verde</button>
+      <button class="btn red"> Rojo</button>
+      <button class="btn blue"> Azul</button>
+      <button class="btn yellow"> Amarillo</button>
+      <button class="btn black br-none"> Negro sin borde</button>
+      <button class="btn white"> Blanco</button>
+    </div>
+
+    <div>
+      <Codex
+        html={`<div class="card br-blue txt-center">
+  <h1 class="display-1 no-margin">Lorem ipsum dolor sit amet.</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit itaque,
+    placeat quis beatae, eligendi fuga expedita <span class="txt-blue"
+      >modi</span
+    > ducimus magni quasi eos dolorem numquam quae porro cupiditate doloribus
+    blanditiis <span class="txt-second"> impedit</span>
+    distinctio.
+  </p>
+  <button class="btn">Principal</button>
+  <button class="btn second txt-white">Secundario</button>
+  <button class="btn outline">Outline</button>
+  <button class="btn green"> Verde</button>
+  <button class="btn red"> Rojo</button>
+  <button class="btn blue"> Azul</button>
+  <button class="btn yellow"> Amarillo</button>
+  <button class="btn black br-none"> Negro sin borde</button>
+  <button class="btn white"> Blanco</button>
+</div>`}
+      />
+    </div>
+    <section>
+      <h3 class="display-3 txt-center margin-top" id="form">Texto</h3>
+      <div>
+        <div class="grid col-2">
+          <div class="span-1 md-span-2">
+            <InfoCard
+              title="Alineacion de texto y colores"
+              body="Para alinear el texto puedes usar las clases txt-center, txt-left, txt-right, txt-justify. Para cambiar el color del texto puedes usar las clases txt-el color {primary,green,red,blue,yellow,black,white} o font-color para usar el color del documento"
+            />
+          </div>
+          <div class="card span-1 md-span-2">
+            <p class="txt-center txt-green">texto verde centrado</p>
+            <p class="txt-right txt-blue">texto azul derecha</p>
+            <p class="txt-left txt-red">texto rojo izquierda</p>
+            <p class="txt-justify txt-yellow">texto justificado amarillo</p>
+            <p class="txt-justify font-color">
+              texto justificado usando font-color
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <Codex
+          html={`<p class="txt-center txt-green">texto verde centrado</p>
+<p class="txt-right txt-blue">texto azul derecha</p>
+<p class="txt-left txt-red">texto rojo izquierda</p>
+<p class="txt-justify txt-yellow">texo justificado yellow</p>
+<p class="txt-justify font-color">texto justificado usando font-color</p>`}
+        />
+      </div>
+      <h2 class="display-3 txt-center margin-top" id="form">Formulario</h2>
+      <div>
+        <div class="grid col-2">
+          <div class="span-1 md-span-2">
+            <div>
+              <InfoCard
+                title="Formulario"
+                body="Usa la clase input dentro de una etiqueta form para  darle estlio a tus los formularios"
+              />
+            </div>
+          </div>
+          <div class="card br-none black span-1 md-span-2">
+            <h2 class="center">Registrate</h2>
+            <form action="">
+              <input
+                class="input br-white black"
+                type="text"
+                placeholder="Correo Electronico"
+              />
+              <input
+                class="input br-white black"
+                type="password"
+                placeholder="Contraseña"
+              />
+              <button class="btn">Suscribete</button>
+              <button class="btn green">Registrate</button>
+            </form>
+          </div>
+        </div>
+        <div class="container">
+          <Codex
+            html={`<div class="card br-none black span-1 md-span-2">
+  <h2 class="center">Registrate</h2>
+  <form action="">
+    <input
+      class="input br-white black"
+      type="text"
+      placeholder="Correo Electronico"
+    />
+    <input
+      class="input br-white black"
+      type="password"
+      placeholder="Contraseña"
+    />
+    <button class="btn">Suscribete</button>
+    <button class="btn green">Registrate</button>
+  </form>
+</div>`}
+          />
+        </div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <h2 class="display-3 txt-center margin-top" id="alin">Alineaciones</h2>
+        <div>
+          <InfoCard
+            title="Alineacion con Flex"
+            body="podemos alinear el contenido dentro de un div usando left, right, center, middle y right"
+          />
+          <br />
+        </div>
+        <div class="card">
+          <div class="left"><button class="btn">Izquierda</button></div>
+          <div class="center">
+            <button class="btn">Centro</button>
+          </div>
+          <div class="right"><button class="btn">Derecha</button></div>
+        </div>
+        <div class="container">
+          <Codex
+            html={`<div class="left"><button class="btn">Izquierda</button></div><div class="center"><button class="btn">Centro</button></div><div class="right"><button class="btn">Derecha</button></div>
+            `}
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+  <div>
+    <section class="container">
+      <h2 class="display-3 center" id="tb">Tablas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Carlos</td>
+            <td>Alvarez</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>Carlos</td>
+            <td>Alvarez</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>Carlos</td>
+            <td>Alvarez</td>
+            <td>25</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="container">
+        <Codex
+          html={` <table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Edad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Carlos</td>
+      <td>Alvarez</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td>Carlos</td>
+      <td>Alvarez</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td>Carlos</td>
+      <td>Alvarez</td>
+      <td>25</td>
+    </tr>
+  </tbody>
+</table>`}
+        />
+      </div>
+    </section>
+  </div>
+  <div>
+    <section class="container">
+      <h2 class="txt-center">Extra</h2>
+      <div class="grid col-2 md-col-2 sm-col-1 card">
+        <div class="txt-center" id="xtr">
+          <h3>Footer</h3>
+          <p>Al usar la etiqueta Footer, tendras un pie de pagina</p>
+          <Codex html={`<footer> pie de pagina </footer>`} />
+        </div>
+        <div class="txt-center">
+          <h3>Hidden</h3>
+          <p>
+            Puedes usar la class="sm-hidden" para ocultar cosas en dispositivos
+            pequeños
+          </p>
+          <p class="sm-hidden">👻</p>
+          <Codex html={`<p class="sm-hidden">👻</p>`} />
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

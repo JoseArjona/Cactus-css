@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <h1 class="display-3 txt-center">Descargar</h1>
+  <div class="container">
+    <div class="grid col-2 md-col-2 sm-col-1">
+      <a href="./assets/css/cactus.css" download="cactus.css" type="button">
+        <div id="all" class="card br-none">
+          <p class="txt-center txt-white">CACTUS CSS</p>
+          <br />
+          <div class="txt-white">
+            Descarga la version completa, con todos los estilos
+          </div>
+        </div>
+      </a>
+      <a
+        href="./assets/css/simple/cactus.css"
+        download="cactus.css"
+        type="button"
+      >
+        <div id="simple" class="card br-none">
+          <p class="txt-center txt-white">SOLO ESTRUCTURA</p>
+          <br />
+          <div class="txt-white">
+            si solo requieres de las grid (incluye el responsive), el normalize
+            y los helpers. Es una version que no contiene estilos de
+            componentes.
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+  a > div {
+    cursor: pointer;
+  }
+
+  a p {
+    margin: 0;
+    font-size: 3rem;
+    font-family: var(--font1);
+    font-weight: 700;
+  }
+
+  a:hover p {
+    transform: scale(1.1);
+  }
+
+  .txt-white {
+    position: relative;
+    z-index: 1;
+  }
+  .card {
+    background-size: cover;
+    position: relative;
+  }
+  #all::before {
+    content: "";
+    background-image: url(/assets/all.svg);
+    filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  #simple::before {
+    content: "";
+    background-image: url(/assets/simple.svg);
+    filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+</style>
