@@ -1,0 +1,76 @@
+---
+---
+
+<section class="modal">
+  <div class="card">
+    <article class="header">
+      <h2>Proxima Gran Actualización</h2>
+      <button class="btn" id="close">X</button>
+    </article>
+    <article>
+      <p>Una nueva version de cactus css esta por salir.</p>
+      <p>
+        Esta actualización pasara a ser la version 3. Trayendo consigo grandes
+        cambios:
+      </p>
+      <ol>
+        <li>
+          Cambio en el manejo de versiones → V <span>3</span>.<span>0</span
+          >.<span>0</span>
+          <br />
+          Donde el primer numero indica la version major, no tendrá compatibilidad
+          con versiones anteriores. Usada para grandes cambios. <br />
+          El segundo numero indicara cambios pequeños en el estilo, no romperá la
+          version.
+          <br />
+          Por ultimo el numero 3 es el que indicara una corrección de bugs.
+        </li>
+        <li>Cambio en la estructura de los archivos css.</li>
+        <li>Cambio en colores y formas en css.</li>
+        <li>Una mejor manera de personalizar.</li>
+        <li>Mejoras en la documentación.</li>
+        <li>Mejor uso de flex</li>
+        <li>Cambio en el nombre de las clases</li>
+      </ol>
+      <p>
+        Con todos estos cambios se pretende mejorar cada vez la experiencia del
+        usuario y de maquetación.
+      </p>
+    </article>
+  </div>
+</section>
+
+<script>
+  const btnClose = document.getElementById("close");
+  const modal = document.querySelector(".modal");
+
+  btnClose.addEventListener("click", () => {
+    modal.classList.add("none");
+  });
+</script>
+
+<style>
+  .modal {
+    position: fixed; /* Cambiado de absolute a fixed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: flex-start;
+  }
+
+  .none {
+    display: none;
+  }
+</style>
