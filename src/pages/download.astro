@@ -5,9 +5,9 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
   <h1 class="display-3 txt-center">Descargar</h1>
   <div class="container">
-    <div class="grid col-2 md-col-2 sm-col-1">
-      <a href="./assets/css/cactus.css" download="cactus.css" type="button">
-        <div id="all" class="card br-none">
+    <div class="grid col-1 md-col-1 sm-col-1">
+      <a href="./assets/css/styles.zip" download="styles.zip" type="button">
+        <div id="all" class="card center br-none">
           <p class="txt-center txt-white">CACTUS CSS</p>
           <br />
           <div class="txt-white">
@@ -15,7 +15,7 @@ import Layout from "../layouts/Layout.astro";
           </div>
         </div>
       </a>
-      <a
+      <!-- <a
         href="./assets/css/simple/cactus.css"
         download="cactus.css"
         type="button"
@@ -29,9 +29,31 @@ import Layout from "../layouts/Layout.astro";
             componentes.
           </div>
         </div>
-      </a>
+      </a> -->
     </div>
   </div>
+  <h2 class="display-3 txt-center">Que incluye?</h2>
+  <section class="container">
+    <div class="card secondary">
+      <p>Todo viene en una carpeta comprimida, la cual contiene:</p>
+      <ul>
+        <li>
+          cactus3.css → Archivo raíz, encargado de vincular los demás. Es el
+          único que necesitas importar en tu html
+        </li>
+        <li>
+          skeleton.css → Archivo con normalize, sistema de grid
+          (responsive),contenedores y helpers
+        </li>
+        <li>themes.css → Donde se define los colores y tipografía</li>
+        <li>cactus.css → Donde se define las formas y 'componentes'</li>
+      </ul>
+      <p>
+        Todos los archivos tienen una comprensión para reducir el peso. La suma
+        de ellos alcanza apenas los 10kb
+      </p>
+    </div>
+  </section>
 </Layout>
 
 <style>

@@ -8,30 +8,34 @@ import { Code } from "astro/components";
   <div class="container">
     <h2>Personalizar la plantilla</h2>
     <p>
-      Si deseas personalizar los colores y la tipografia solo tienes que
-      cambiarlos en un archivo css :
+      Si deseas personalizar los colores y la tipografía solo tienes que
+      cambiarlos en un archivo css, busca el archivo <span class="txt-green"
+        >themes.css</span
+      > :
     </p>
     <Code
-      code={`:root {
-  --font1: Montserrat, sans-serif;
-  --font2: Cabin, sans-serif;
-  --font3: "Work Sans", sans-serif;
-  --cont-wh: 1200px;
-  --primary: #56f09f;
-  --background: #122625;
-  --font-color: #fffbec;
+      code={`@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Work+Sans&display=swap";
+:root {
+  --font1: Montserrat, system-ui, sans-serif; /* Fuente de los títulos */
+  --font2: "Work Sans", system-ui, sans-serif; /* Fuente general */
+  --cont-wh: 1200px; /* Ancho de la pantalla */
+  --primary: #98f098;
+  --secondary: #cce0cc;
+  --accent: #313849;
+  --font-color: #16181d; /* Color de la fuente */
+  --background: radial-gradient(hsl(220, 40%, 94%), hsl(220, 14%, 94%)); /* Color Fondo */
   --green: #45d25a;
   --red: #dc3243;
   --yellow: #f2c94c;
-  --blue: #2f80ed;
-  --purple: #2a184a;
-  --radius: 5px;
-}`}
+  --blue: #4024ca;
+  --radius: 1.5rem; /* Radio de las cards */
+}
+`}
       lang="css"
       theme="dracula-soft"
     />
     <p>
-      al ser un archivo css, realmente es muy facil cambiar los valores que no
+      al ser un archivo css, realmente es muy fácil cambiar los valores que no
       te agraden, como las sombras, efectos hover y demás.
     </p>
     <p>
@@ -42,8 +46,8 @@ import { Code } from "astro/components";
     <a href="https://www.toptal.com/developers/cssminifier">CSS Compressor</a>
     <br />
     <p>
-      Tambien puedes usar una clase y modifcarla, siendo más especifico o usando
-      ´!important´
+      También puedes usar una clase y modificarla, siendo más especifico o
+      usando ´!important´
     </p>
     <Code
       code={`.btn{ background-color: #00d26a !important;}`}
@@ -53,15 +57,18 @@ import { Code } from "astro/components";
     <h2>Crear Tema</h2>
     <p>
       Si deseas crear un tema nuevo, solo tienes que crear un archivo css y
-      definir una clase, poniendo las varibles que deseas cambiar(las variables
+      definir una clase, poniendo las variables que deseas cambiar(las variables
       que admite son las que se muestran arriba en root) :
     </p>
     <Code
-      code={`.theme-light {
-  --primary: #09773c;
-  --background: #edf7f5;
-  --font-color: #000;
-} // aqui creamos el tema claro`}
+      code={`/* Tema oscuro */
+.theme-dark {
+  --font-color: #f9fafb;
+  --background: #16181d;
+  --primary: #98f098;
+  --secondary: #232529;
+  --accent: #727fa1;
+}`}
       lang="css"
       theme="dracula-soft"
     />
@@ -71,45 +78,47 @@ import { Code } from "astro/components";
       por ejemplo:
     </p>
     <Code
-      code={`/* Definmos un checkbox */
-<div class="toggle-btn" id="dark-mode-toggle">
-    <input type="checkbox" />
+      code={`/* Definimos un checkbox */
+<div class="toggle-btn" id="light-mode-toggle">
+  <label title="Use light theme" aria-label="Use light theme">
+    <input type="checkbox" name="light-mode-toggle" />
     <span></span>
+  </label>
 </div>
-/*Las clases son de un css aparte */`}
+/*Las clases para crear el checkbox son de un css aparte */`}
       lang="html"
       theme="dracula-soft"
     />
     <Code
-      code={`/* Funcion en JS*/
+      code={`/* Función en JS*/
 // creamos una constante para el checkbox
-const toggle = document.getElementById("dark-mode-toggle");
+const toggle = document.getElementById("light-mode-toggle");
 // creamos un evento para el checkbox
 toggle.addEventListener("change", (e) => {
   // si el checkbox esta desactivado
   if (e.target.checked == false) {
     // guardamos en el localStorage que el modo oscuro esta desactivado
-    localStorage.setItem("light", "false");
+    localStorage.setItem("dark", "false");
     // removemos las clases de modo oscuro
-    document.documentElement.classList.remove("theme-light");
+    document.documentElement.classList.remove("theme-dark");
   } else {
     // si el checkbox esta activado guardamos en el localStorage que el modo oscuro esta activado
-    localStorage.setItem("light", "true");
+    localStorage.setItem("dark", "true");
     // agregamos las clases de modo oscuro
-    document.documentElement.classList.add("theme-light");
+    document.documentElement.classList.add("theme-dark");
   }
 });
 // comprobamos si el modo oscuro esta activado
-if (localStorage.getItem("light") === "true") {
+if (localStorage.getItem("dark") === "true") {
   // si esta activado activamos el checkbox
   toggle.querySelector("input").checked = true;
   // agregamos las clases de modo oscuro
-  document.documentElement.classList.add("theme-light");
+  document.documentElement.classList.add("theme-dark");
 }`}
       lang="js"
       theme="dracula-soft"
     />
-    💡<b>TIP:</b> si deseas cambiar el tema con un boton, solo tienes que cambiar
+    💡<b>TIP:</b> si deseas cambiar el tema con un botón, solo tienes que cambiar
     el input por un button y agregarle un evento onclick. <br />
     Nota : si estas usando Astro Js, usa
     <Code code={`<script is:inline>...</script>`} lang="html" />

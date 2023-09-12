@@ -41,9 +41,9 @@
         <a href="/download" class="nav-link">Descargar</a>
       </li>
       <li class="nav-item">
-        <div class="toggle-btn" id="dark-mode-toggle">
-          <label title="Use dark theme" aria-label="Use dark theme">
-            <input type="checkbox" name="dark-mode-toggle" />
+        <div class="toggle-btn" id="light-mode-toggle">
+          <label title="Use light theme" aria-label="Use light theme">
+            <input type="checkbox" name="light-mode-toggle" />
             <span></span>
           </label>
         </div>
@@ -103,7 +103,7 @@
   }
 
   .nav-link {
-    font-size: 1.8rem;
+    font-size: 1.25rem;
     font-weight: 400;
     color: var(--font-color);
   }
@@ -117,13 +117,13 @@
     align-items: center;
     margin: 2px;
     font-family: var(--font1);
-    font-size: 2.1rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--font-color);
   }
 
   .nav-logo:hover {
-    color: var(--primary);
+    color: var(--accent);
   }
 
   /* Dropdown */
@@ -131,6 +131,7 @@
     display: none;
     position: absolute;
     padding: 2rem;
+    background: #16181d;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
     z-index: 1;
   }
@@ -140,14 +141,13 @@
   }
 
   .dropdown li a {
-    font-size: 1.6rem;
+    font-size: 1.25rem;
     font-weight: 400;
-    color: var(--font-color);
+    color: #fff;
   }
 
   .dropdown li a:hover {
     color: var(--primary);
-    margin: 10px;
   }
 
   .nav-item:hover .dropdown {
@@ -179,9 +179,9 @@
     z-index: 2;
   }
 
-  /* dark-mode-toggle btn */
+  /* light-mode-toggle btn */
 
-  #dark-mode-toggle span {
+  #light-mode-toggle span {
     position: absolute;
     top: 0px;
     right: 0px;
@@ -195,8 +195,8 @@
     transition: 0.2s ease background-color, 0.2s ease opacity;
   }
 
-  #dark-mode-toggle span:before,
-  #dark-mode-toggle span:after {
+  #light-mode-toggle span:before,
+  #light-mode-toggle span:after {
     content: "";
     position: absolute;
     top: 4px;
@@ -206,32 +206,32 @@
     transition: 0.5s ease transform, 0.2s ease background-color;
   }
 
-  #dark-mode-toggle span:before {
+  #light-mode-toggle span:before {
     background-color: #fff;
     transform: translate(-28px, 0px);
     z-index: 1;
   }
 
-  #dark-mode-toggle span:after {
+  #light-mode-toggle span:after {
     background-color: #000;
     transform: translate(3px, 0px);
     z-index: 0;
   }
 
-  #dark-mode-toggle input[type="checkbox"]:checked + span {
+  #light-mode-toggle input[type="checkbox"]:checked + span {
     background-color: #000;
   }
 
-  #dark-mode-toggle input[type="checkbox"]:active + span {
+  #light-mode-toggle input[type="checkbox"]:active + span {
     opacity: 0.5;
   }
 
-  #dark-mode-toggle input[type="checkbox"]:checked + span:before {
+  #light-mode-toggle input[type="checkbox"]:checked + span:before {
     background-color: #000;
     transform: translate(16px, -1px);
   }
 
-  #dark-mode-toggle input[type="checkbox"]:checked + span:after {
+  #light-mode-toggle input[type="checkbox"]:checked + span:after {
     background-color: #fff;
     transform: translate(23px, 0px);
   }
@@ -300,27 +300,27 @@
 
 <script is:inline>
   // creamos una constante para el checkbox
-  const toggle = document.getElementById("dark-mode-toggle");
+  const toggle = document.getElementById("light-mode-toggle");
   // creamos un evento para el checkbox
   toggle.addEventListener("change", (e) => {
     // si el checkbox esta desactivado
     if (e.target.checked == false) {
       // guardamos en el localStorage que el modo oscuro esta desactivado
-      localStorage.setItem("light", "false");
+      localStorage.setItem("dark", "false");
       // removemos las clases de modo oscuro
-      document.documentElement.classList.remove("theme-light");
+      document.documentElement.classList.remove("theme-dark");
     } else {
       // si el checkbox esta activado guardamos en el localStorage que el modo oscuro esta activado
-      localStorage.setItem("light", "true");
+      localStorage.setItem("dark", "true");
       // agregamos las clases de modo oscuro
-      document.documentElement.classList.add("theme-light");
+      document.documentElement.classList.add("theme-dark");
     }
   });
   // comprobamos si el modo oscuro esta activado
-  if (localStorage.getItem("light") === "true") {
+  if (localStorage.getItem("dark") === "true") {
     // si esta activado activamos el checkbox
     toggle.querySelector("input").checked = true;
     // agregamos las clases de modo oscuro
-    document.documentElement.classList.add("theme-light");
+    document.documentElement.classList.add("theme-dark");
   }
 </script>

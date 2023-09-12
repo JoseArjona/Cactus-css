@@ -4,66 +4,68 @@ import { Code } from "astro/components";
 ---
 
 <Layout>
-  <section>
-    <div class="container">
-      <h1 class="display-3 txt-center">Comenzar</h1>
-      <div class="grid col-2 md-col-2 sm-col-1">
-        <div class="card span-2 sm-span-1">
-          <h2>Opciones de Uso</h2>
-          <p>
-            Para el correcto comportamiento es importante que tengas las
-            siguientes etiquetas en tu etiqueta <b>head</b> de tu html.
-          </p>
+  <main class="container">
+    <section><h1 class="display-3 txt-center">Comenzar</h1></section>
+    <section class="grid col-2 md-col-2 sm-col-1">
+      <article class="card accent txt-white span-2 sm-span-2">
+        <h2>Opciones de Uso</h2>
+        <p>
+          Para el correcto comportamiento es importante que tengas las
+          siguientes etiquetas en tu etiqueta <b>head</b> de tu html.
+        </p>
 
-          <Code
-            code={`<meta charset="UTF-8" />
+        <Code
+          code={`<meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />`}
+          lang="html"
+          theme="dracula"
+        />
+        <div>
+          <h3>Descarga el archivo</h3>
+          Puedes descargar la carpeta 'styles' y descomprime en tu carpeta de trabajo,
+          después importa el archivo cactus3.css en tu documento html.
+          <Code
+            code={`<link rel="stylesheet" href=".../style/cactus3.css"> <!-- Importa de forma local -->`}
             lang="html"
             theme="dracula"
           />
-          <div>
-            <h3>Descarga el archivo</h3>
-            Puedes descargar el archivo css e importarlo en tu documento html.
-            <Code
-              code={`<link rel="stylesheet" href="assets/css/cactus.css"> <!-- Importa de forma local -->`}
-              lang="html"
-              theme="dracula"
-            />
-          </div>
-          <div>
-            <h3>Uso por link</h3>
-            Puedes copiar el link y pegarlo en tu etiqueta <span class="subText"
-              >head</span
-            > de tu html. Y simplemente colocar las clases en tus etiquetas, para
-            guiarte puedes ir a componentes
-            <Code
-              code={`<link rel="stylesheet" href="https://cactus-css.vercel.app/assets/css/cactus.css">`}
-              lang="html"
-              theme="dracula"
-            />
-          </div>
-          Para aprender usar las clases puedes ir a la sección de Docs.
-          <a href="/Docs" class="btn a red" type="button">Docs</a>
         </div>
-        <div class="card">
-          <h2>Personalizar y Temas</h2>
-          <div>
-            Para personalizar las formas,sombras,colores y/o crear tu propio
-            tema dirgite a Personalizar <br /><br />
-          </div>
-          <a href="/Personalizar" class="btn a purple" type="button"
-            >Personalizar</a
-          >
+        <div>
+          <h3>Uso por link</h3>
+          Puedes copiar el link y pegarlo en tu etiqueta <span class="subText"
+            >head</span
+          > de tu html. Y simplemente colocar las clases en tus etiquetas, para guiarte
+          puedes ir a componentes. (Ten en cuenta que es una version sujeta a cambios
+          constantes)
+          <Code
+            code={`<link rel="stylesheet" href="https://cactus-css.vercel.app/assets/css/cactus3.css">`}
+            lang="html"
+            theme="dracula"
+          />
         </div>
-        <div class="card">
-          <h2>Opciones de descarga</h2><div>
-            Existen 2 opciones de descarga.Conoce más en la seccion de Descargas <br
-            /><br />
-          </div>
-          <a href="/download" class="btn a green" type="button">Descargas</a>
+        Para aprender usar las clases puedes ir a la sección de Docs.
+        <a
+          href="/Docs"
+          class="btn blue txt-white"
+          style="margin-top: 10px;"
+          type="button">Docs</a
+        >
+      </article>
+      <article class="card secondary sm-span-2">
+        <h2>Personalizar y Temas</h2>
+        <div>
+          Para personalizar las formas,sombras,colores y/o crear tu propio tema
+          dirígete a Personalizar <br /><br />
         </div>
-      </div>
-    </div>
-  </section>
+        <a href="/Personalizar" class="btn green" type="button">Personalizar</a>
+      </article>
+      <article class="card br-accent sm-span-2">
+        <h2>Opciones de descarga</h2><div>
+          Conoce más en la sección de Descargas <br /><br />
+        </div>
+        <a href="/download" class="btn yellow" type="button">Descargas</a>
+      </article>
+    </section>
+  </main>
 </Layout>

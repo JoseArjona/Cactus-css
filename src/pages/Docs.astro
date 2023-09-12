@@ -48,25 +48,27 @@ import "../styles/cactus.css";
       body="Puedes utilizar la clase container para contener tus elementos y centrarlos, también puedes utilizar la clase grid para crear una grilla de elementos (ambas clases son compatibles). Las clases grid funcionan muy fácil, solo usa col-# para definir el número de columnas que quieres que tenga tú grilla, usa md-col-# para definir el número de columnas en dispositivos medianos y sm-col-# para dispositivos pequeños. Por último, con span-# puedes definir el número de columnas que quieres que ocupe un elemento en específico."
     />
     <br />
-    <div class="grid col-3 md-col-2 sm-col-1">
-      <div class="card">Card 1</div>
-      <div class="card">Card 2</div>
-      <div class="card">Card 3</div>
-      <div class="card">Card 4</div>
-      <div class="card span-2 md-span-2">Card 5 con span de 2</div>
-    </div>
+    <section class="grid col-3 md-col-2 sm-col-1">
+      <div class="card secondary">Card 1</div>
+      <div class="card secondary">Card 2</div>
+      <div class="card secondary">Card 3</div>
+      <div class="card secondary">Card 4</div>
+      <div class="card secondary span-2 md-span-2">Card 5 con span de 2</div>
+    </section>
 
     <div>
       <Codex
-        html={`<div class="container">
-      <div class="grid col-3 md-col-2 sm-col-1">
-          <div class="card">Card 1</div>
-          <div class="card">Card 2</div>
-          <div class="card">Card 3</div>
-          <div class="card">Card 4</div>
-          <div class="card span-2 md-span-2">Card 5</div>
-      </div>
- </div>`}
+        html={`<section class="container">
+  <div class="grid col-3 md-col-2 sm-col-1">
+    <div class="card secondary">Card 1</div>
+    <div class="card secondary">Card 2</div>
+    <div class="card secondary">Card 3</div>
+    <div class="card secondary">Card 4</div>
+    <div class="card secondary span-2 md-span-2">
+      Card 5 con span de 2
+    </div>
+  </div>
+ </section>`}
       />
     </div>
   </div>
@@ -76,9 +78,9 @@ import "../styles/cactus.css";
   <div class="container">
     <InfoCard
       title="Card, Botones y colores"
-      body={`La clase card es simplemente un estilo que le puedes dar a cualquier div. La clase btn es para los botones, si quieres un color de fondo diferente usa cualquiera de estos {primary,green,red,blue,yellow,black,white,outline}. 
-      Si deseas cambiar el color de un texto puedes usar la clase txt- + el color {primary,green,red,blue,yellow,black,white}.
-      Si desas cambiar el border de un elemento puedes usar la clase border- + el color {primary,green,red,blue,yellow,black,white} o br-none si no quieres bordes.`}
+      body={`La clase card es simplemente un estilo que le puedes dar a cualquier div. La clase btn es para los botones, si quieres un color de fondo diferente usa cualquiera de estos {primary,secondary,accent,green,red,blue,yellow,black,white,outline}. 
+      Si deseas cambiar el color de un texto puedes usar la clase txt- + el color {primary,secondary,accent,green,red,blue,yellow,black,white}.
+      Si deseas cambiar el border de un elemento puedes usar la clase border- + el color {primary,secondary,accent,green,red,blue,yellow,black,white} o br-none si no quieres bordes.`}
     />
     <br />
     <div class="card br-blue txt-center">
@@ -91,15 +93,17 @@ import "../styles/cactus.css";
         blanditiis <span class="txt-secondary"> impedit</span>
         distinctio.
       </p>
-      <button class="btn">Principal</button>
-      <button class="btn secondary txt-white">Secundario</button>
-      <button class="btn outline">Outline</button>
-      <button class="btn green"> Verde</button>
-      <button class="btn red"> Rojo</button>
-      <button class="btn blue"> Azul</button>
-      <button class="btn yellow"> Amarillo</button>
-      <button class="btn black br-none"> Negro sin borde</button>
-      <button class="btn white"> Blanco</button>
+      <div>
+        <button class="btn txt-black">Principal</button>
+        <button class="btn secondary">Secundario</button>
+        <button class="btn accent txt-white">Accent</button>
+        <button class="btn green"> Verde</button>
+        <button class="btn red"> Rojo</button>
+        <button class="btn blue txt-white"> Azul</button>
+        <button class="btn yellow"> Amarillo</button>
+        <button class="btn black"> Negro</button>
+        <button class="btn white"> Blanco</button>
+      </div>
     </div>
 
     <div>
@@ -114,15 +118,17 @@ import "../styles/cactus.css";
     blanditiis <span class="txt-secondary"> impedit</span>
     distinctio.
   </p>
-  <button class="btn">Principal</button>
-  <button class="btn secondary txt-white">Secundario</button>
-  <button class="btn outline">Outline</button>
-  <button class="btn green"> Verde</button>
-  <button class="btn red"> Rojo</button>
-  <button class="btn blue"> Azul</button>
-  <button class="btn yellow"> Amarillo</button>
-  <button class="btn black br-none"> Negro sin borde</button>
-  <button class="btn white"> Blanco</button>
+  <div>
+    <button class="btn txt-black">Principal</button>
+    <button class="btn secondary ">Secundario</button>
+    <button class="btn accent txt-white">Accent</button>
+    <button class="btn green"> Verde</button>
+    <button class="btn red"> Rojo</button>
+    <button class="btn blue txt-white"> Azul</button>
+    <button class="btn yellow"> Amarillo</button>
+    <button class="btn black"> Negro</button>
+    <button class="btn white"> Blanco</button>
+  </div>
 </div>`}
       />
     </div>
@@ -136,7 +142,7 @@ import "../styles/cactus.css";
               body="Para alinear el texto puedes usar las clases txt-center, txt-left, txt-right, txt-justify. Para cambiar el color del texto puedes usar las clases txt-el color {primary,green,red,blue,yellow,black,white} o font-color para usar el color del documento"
             />
           </div>
-          <div class="card span-1 md-span-2">
+          <div class="card outline span-1 md-span-2">
             <p class="txt-center txt-green">texto verde centrado</p>
             <p class="txt-right txt-blue">texto azul derecha</p>
             <p class="txt-left txt-red">texto rojo izquierda</p>
@@ -152,7 +158,7 @@ import "../styles/cactus.css";
           html={`<p class="txt-center txt-green">texto verde centrado</p>
 <p class="txt-right txt-blue">texto azul derecha</p>
 <p class="txt-left txt-red">texto rojo izquierda</p>
-<p class="txt-justify txt-yellow">texo justificado yellow</p>
+<p class="txt-justify txt-yellow">texto justificado yellow</p>
 <p class="txt-justify font-color">texto justificado usando font-color</p>`}
         />
       </div>
@@ -163,146 +169,219 @@ import "../styles/cactus.css";
             <div>
               <InfoCard
                 title="Formulario"
-                body="Usa la clase input dentro de una etiqueta form para  darle estlio a tus los formularios"
+                body="Usa la clase input dentro de una etiqueta form para  darle estilo a tus los formularios"
               />
             </div>
           </div>
-          <div class="card br-none black span-1 md-span-2">
-            <h2 class="center">Registrate</h2>
+          <section class="card br-none black span-1 md-span-2">
+            <h2 class="center">Regístrate</h2>
             <form action="">
               <input
                 class="input br-white black"
                 type="text"
-                placeholder="Correo Electronico"
+                placeholder="Correo Electrónico"
               />
               <input
                 class="input br-white black txt-white"
                 type="password"
                 placeholder="Contraseña"
               />
-              <button class="btn">Suscribete</button>
-              <button class="btn green">Registrate</button>
+              <button class="btn">Subscribe</button>
+              <button class="btn green">Regístrate</button>
             </form>
-          </div>
+          </section>
         </div>
         <div class="container">
           <Codex
-            html={`<div class="card br-none black span-1 md-span-2">
-  <h2 class="center">Registrate</h2>
+            html={`<section class="card br-none black span-1 md-span-2">
+  <h2 class="center">Regístrate</h2>
   <form action="">
     <input
       class="input br-white black"
       type="text"
-      placeholder="Correo Electronico"
+      placeholder="Correo Electrónico"
     />
     <input
-      class="input br-white black"
+      class="input br-white black txt-white"
       type="password"
       placeholder="Contraseña"
     />
-    <button class="btn">Suscribete</button>
-    <button class="btn green">Registrate</button>
+    <button class="btn">Subscribe</button>
+    <button class="btn green">Regístrate</button>
   </form>
-</div>`}
+</section>`}
           />
         </div>
       </div>
     </section>
     <section>
       <div>
-        <h2 class="display-3 txt-center margin-top" id="alin">Alineaciones</h2>
-        <div>
-          <InfoCard
-            title="Alineacion con Flex"
-            body="podemos alinear el contenido dentro de un div usando left, right, center, middle y right"
-          />
-          <br />
-        </div>
-        <div class="card">
-          <div class="left"><button class="btn">Izquierda</button></div>
-          <div class="center">
-            <button class="btn">Centro</button>
+        <h2 class="display-3 txt-center margin-top" id="alin">Flex</h2>
+        <article>
+          <div>
+            <InfoCard
+              title="Alineación con Flex"
+              body="podemos alinear el contenido dentro de un div o una card usando las clases: flex/card seguido de left, right, center y right"
+            />
+            <br />
           </div>
-          <div class="right"><button class="btn">Derecha</button></div>
-        </div>
-        <div class="container">
-          <Codex
-            html={`<div class="left"><button class="btn">Izquierda</button></div><div class="center"><button class="btn">Centro</button></div><div class="right"><button class="btn">Derecha</button></div>
-            `}
+          <div class="container">
+            <div class="flex left"><button class="btn">Izquierda</button></div>
+            <div class="flex center">
+              <button class="btn">Centro</button>
+            </div>
+            <div class="flex right"><button class="btn">Derecha</button></div>
+          </div>
+          <div class="container">
+            <Codex
+              html={`<section class="container">
+    <div class="flex left">
+      <button class="btn">Izquierda</button>
+    </div>
+    <div class="flex center">
+      <button class="btn">Centro</button>
+    </div>
+    <div class="flex right">
+      <button class="btn">Derecha</button>
+    </div>
+  </section>`}
+            />
+          </div>
+        </article>
+        <article>
+          <InfoCard
+            title="Flex Direction"
+            body="Por defecto la clase card y flex, usan display flex. El flex direction habitualmente es column. Sin embargo, puedes orientar a row o column, usando la clase f-row/f-col, según el caso"
           />
-        </div>
+          <div class="container grid col-2 md-col-2 sm-col-1" style="">
+            <div>
+              <h3 class="txt-center">Direction Row:</h3>
+              <div class="flex center f-row">
+                <div><button class="btn secondary">1</button></div>
+                <div><button class="btn secondary">2</button></div>
+              </div>
+            </div>
+            <div>
+              <h3 class="txt-center">Direction Column:</h3>
+              <div class="flex center f-col">
+                <div><button class="btn secondary">1</button></div>
+                <div><button class="btn secondary">2</button></div>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
   </div>
   <div>
     <section class="container">
-      <h2 class="display-3 center" id="tb">Tablas</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Edad</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Carlos</td>
-            <td>Alvarez</td>
-            <td>25</td>
-          </tr>
-          <tr>
-            <td>Carlos</td>
-            <td>Alvarez</td>
-            <td>25</td>
-          </tr>
-          <tr>
-            <td>Carlos</td>
-            <td>Alvarez</td>
-            <td>25</td>
-          </tr>
-        </tbody>
-      </table>
+      <h2 class="display-3 txt-center" id="tb">Tablas</h2>
+      <section class="flex center">
+        <table>
+          <thead class="accent txt-white br-black">
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Edad</th>
+            </tr>
+          </thead>
+          <tbody class="br-black">
+            <tr>
+              <td>Carlos</td>
+              <td>Alvarez</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>Carlos</td>
+              <td>Alvarez</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>Carlos</td>
+              <td>Alvarez</td>
+              <td>25</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
       <div class="container">
         <Codex
-          html={` <table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Edad</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Carlos</td>
-      <td>Alvarez</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <td>Carlos</td>
-      <td>Alvarez</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <td>Carlos</td>
-      <td>Alvarez</td>
-      <td>25</td>
-    </tr>
-  </tbody>
-</table>`}
+          html={`<section class="flex center">
+   <table>
+     <thead class="accent txt-white br-black">
+       <tr>
+         <th>Nombre</th>
+         <th>Apellido</th>
+         <th>Edad</th>
+       </tr>
+     </thead>
+     <tbody class="br-black">
+       <tr>
+         <td>Carlos</td>
+         <td>Alvarez</td>
+         <td>25</td>
+       </tr>
+       <tr>
+         <td>Carlos</td>
+         <td>Alvarez</td>
+         <td>25</td>
+       </tr>
+       <tr>
+         <td>Carlos</td>
+         <td>Alvarez</td>
+         <td>25</td>
+       </tr>
+     </tbody>
+   </table>
+</section>`}
         />
       </div>
     </section>
   </div>
+  <section class="section f-col">
+    <div>
+      <h2>Clase section</h2>
+    </div>
+    <div>
+      <p class="container">
+        La clase section permite tener un bloque flex que ocupe el todo el ancho
+        de la pantalla. Es recomendable que si usaras esta clase agregues un
+        <span class="txt-red">overflow-x:hidden</span> al <span
+          class="txt-accent">Body</span
+        >
+      </p>
+    </div>
+    <div>
+      <Codex
+        html={`<section class="section f-col">
+  <div>
+    <h2>Clase section</h2>
+  </div>
+  <div>
+    <p class="container">
+      La clase section permite tener un bloque flex que ocupe el todo el ancho
+      de la pantalla. Es recomendable que si usaras esta clase agregues un
+      <span class="txt-red">overflow-x:hidden</span> al <span
+        class="txt-accent">Body</span
+      >
+    </p>
+  </div>
+</section>`}
+      />
+    </div>
+  </section>
   <div>
     <section class="container">
       <h2 class="txt-center">Extra</h2>
-      <div class="grid col-2 md-col-2 sm-col-1 card">
+      <div class="grid col-2 md-col-2 sm-col-1 card secondary">
         <div class="txt-center" id="xtr">
-          <h3>Footer</h3>
-          <p>Al usar la etiqueta Footer, tendras un pie de pagina</p>
-          <Codex html={`<footer> pie de pagina </footer>`} />
+          <h3>None</h3>
+          <p>
+            Al usar la clase none, desaparecerá el bloque. Util para agregarla
+            desde JS
+          </p>
+          <Codex html={`<div class="none"> Adios </div>`} />
+          <div class="none">Adios</div>
         </div>
         <div class="txt-center">
           <h3>Hidden</h3>
