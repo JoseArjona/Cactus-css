@@ -3,6 +3,8 @@ import NavBar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/cactus3.css";
 /* const canonicalURL = new URL(Astro.url.pathname, Astro.site); */
+
+const image = "./assets/mainCactus.png"
 ---
 
 <!DOCTYPE html>
@@ -31,13 +33,13 @@ import "../styles/cactus3.css";
       property="og:description"
       content="Cactus CSS es un marco CSS ligero, responsivo y personalizable. ¡Pesa menos de 10 kb!"
     />
-    <meta property="og:image" content="/assets/mainCactus.png" />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://cactuscss.vercel.app/" />
     <meta property="twitter:title" content="Cactus Css" />
     <meta property="twitter:description" content="Cactus CSS es un marco CSS ligero, responsivo y personalizable. ¡Pesa menos de 10 kb!" />
-    <meta property="twitter:image" content="/assets/mainCactus.png" />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
    
     <!-- 
 		<link rel="canonical" href={canonicalURL} /> -->
