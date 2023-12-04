@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import { Code } from "astro/components";
 ---
-
 <Layout>
   <h1 class="display-3 txt-center">Personalizar</h1>
   <div class="container">
@@ -61,13 +60,12 @@ import { Code } from "astro/components";
       que admite son las que se muestran arriba en root) :
     </p>
     <Code
-      code={`/* Tema oscuro */
-.theme-dark {
+      code={`:root[data-theme='dark'] {
+  --primary: #98f098;
   --font-color: #f9fafb;
   --background: #16181d;
-  --primary: #98f098;
   --secondary: #232529;
-  --accent: #727fa1;
+  --accent: #727fa1
 }`}
       lang="css"
       theme="dracula-soft"
@@ -90,8 +88,7 @@ import { Code } from "astro/components";
       theme="dracula-soft"
     />
     <Code
-      code={`/* Función en JS*/
-// creamos una constante para el checkbox
+      code={`// creamos una constante para el checkbox
 const toggle = document.getElementById("light-mode-toggle");
 // creamos un evento para el checkbox
 toggle.addEventListener("change", (e) => {
@@ -99,21 +96,22 @@ toggle.addEventListener("change", (e) => {
   if (e.target.checked == false) {
     // guardamos en el localStorage que el modo oscuro esta desactivado
     localStorage.setItem("dark", "false");
-    // removemos las clases de modo oscuro
-    document.documentElement.classList.remove("theme-dark");
+    // removemos el atributo data-theme
+    document.documentElement.removeAttribute("data-theme");
   } else {
     // si el checkbox esta activado guardamos en el localStorage que el modo oscuro esta activado
     localStorage.setItem("dark", "true");
-    // agregamos las clases de modo oscuro
-    document.documentElement.classList.add("theme-dark");
+    // agregamos el atributo data-theme con el valor "dark"
+    document.documentElement.setAttribute("data-theme", "dark");
   }
 });
+
 // comprobamos si el modo oscuro esta activado
 if (localStorage.getItem("dark") === "true") {
   // si esta activado activamos el checkbox
   toggle.querySelector("input").checked = true;
-  // agregamos las clases de modo oscuro
-  document.documentElement.classList.add("theme-dark");
+  // agregamos el atributo data-theme con el valor "dark"
+  document.documentElement.setAttribute("data-theme", "dark");
 }`}
       lang="js"
       theme="dracula-soft"
