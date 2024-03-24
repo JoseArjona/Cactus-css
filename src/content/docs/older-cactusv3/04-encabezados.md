@@ -1,5 +1,5 @@
 ---
-title: Encabezados.
+title: Encabezados
 ---
 
 ## Títulos h#

@@ -185,72 +185,100 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"docs": {
-"guides/01-encabezados.md": {
-	id: "guides/01-encabezados.md";
-  slug: "guides/01-encabezados";
+"current/index.mdx": {
+	id: "current/index.mdx";
+  slug: "current";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"older-cactusv3/01-uso.md": {
+	id: "older-cactusv3/01-uso.md";
+  slug: "older-cactusv3/01-uso";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
-"guides/02-texto.md": {
-	id: "guides/02-texto.md";
-  slug: "guides/02-texto";
+"older-cactusv3/02-descargar.mdx": {
+	id: "older-cactusv3/02-descargar.mdx";
+  slug: "older-cactusv3/02-descargar";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"older-cactusv3/03-personalizar.mdx": {
+	id: "older-cactusv3/03-personalizar.mdx";
+  slug: "older-cactusv3/03-personalizar";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"older-cactusv3/04-encabezados.md": {
+	id: "older-cactusv3/04-encabezados.md";
+  slug: "older-cactusv3/04-encabezados";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
-"guides/03-contenedores.md": {
-	id: "guides/03-contenedores.md";
-  slug: "guides/03-contenedores";
+"older-cactusv3/05-texto.md": {
+	id: "older-cactusv3/05-texto.md";
+  slug: "older-cactusv3/05-texto";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
-"guides/04-botones.md": {
-	id: "guides/04-botones.md";
-  slug: "guides/04-botones";
+"older-cactusv3/06-contenedores.md": {
+	id: "older-cactusv3/06-contenedores.md";
+  slug: "older-cactusv3/06-contenedores";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
-"guides/05-flex.md": {
-	id: "guides/05-flex.md";
-  slug: "guides/05-flex";
+"older-cactusv3/06-grid.md": {
+	id: "older-cactusv3/06-grid.md";
+  slug: "older-cactusv3/06-grid";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
-"guides/06-grid.md": {
-	id: "guides/06-grid.md";
-  slug: "guides/06-grid";
+"older-cactusv3/07-botones.md": {
+	id: "older-cactusv3/07-botones.md";
+  slug: "older-cactusv3/07-botones";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
-"guides/07-formularios.md": {
-	id: "guides/07-formularios.md";
-  slug: "guides/07-formularios";
+"older-cactusv3/08-flex.md": {
+	id: "older-cactusv3/08-flex.md";
+  slug: "older-cactusv3/08-flex";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
-"guides/08-tablas.md": {
-	id: "guides/08-tablas.md";
-  slug: "guides/08-tablas";
+"older-cactusv3/09-formularios.md": {
+	id: "older-cactusv3/09-formularios.md";
+  slug: "older-cactusv3/09-formularios";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
-"guides/09-utilidades.md": {
-	id: "guides/09-utilidades.md";
-  slug: "guides/09-utilidades";
+"older-cactusv3/10-tablas.md": {
+	id: "older-cactusv3/10-tablas.md";
+  slug: "older-cactusv3/10-tablas";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
-"guides/index.mdx": {
-	id: "guides/index.mdx";
-  slug: "guides";
+"older-cactusv3/11-utilidades.md": {
+	id: "older-cactusv3/11-utilidades.md";
+  slug: "older-cactusv3/11-utilidades";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] };
+"older-cactusv3/index.mdx": {
+	id: "older-cactusv3/index.mdx";
+  slug: "older-cactusv3";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
