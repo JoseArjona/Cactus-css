@@ -185,103 +185,194 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"docs": {
+"current/01-uso.md": {
+	id: "current/01-uso.md";
+  slug: "current/01-uso";
+  body: string;
+  collection: "docs";
+  data: any
+} & { render(): Render[".md"] };
+"current/02-descargar.mdx": {
+	id: "current/02-descargar.mdx";
+  slug: "current/02-descargar";
+  body: string;
+  collection: "docs";
+  data: any
+} & { render(): Render[".mdx"] };
+"current/03-personalizar.mdx": {
+	id: "current/03-personalizar.mdx";
+  slug: "current/03-personalizar";
+  body: string;
+  collection: "docs";
+  data: any
+} & { render(): Render[".mdx"] };
+"current/04-encabezados.md": {
+	id: "current/04-encabezados.md";
+  slug: "current/04-encabezados";
+  body: string;
+  collection: "docs";
+  data: any
+} & { render(): Render[".md"] };
+"current/05-texto.md": {
+	id: "current/05-texto.md";
+  slug: "current/05-texto";
+  body: string;
+  collection: "docs";
+  data: any
+} & { render(): Render[".md"] };
+"current/06-botones.md": {
+	id: "current/06-botones.md";
+  slug: "current/06-botones";
+  body: string;
+  collection: "docs";
+  data: any
+} & { render(): Render[".md"] };
+"current/07-contenedores.md": {
+	id: "current/07-contenedores.md";
+  slug: "current/07-contenedores";
+  body: string;
+  collection: "docs";
+  data: any
+} & { render(): Render[".md"] };
+"current/08-flex.md": {
+	id: "current/08-flex.md";
+  slug: "current/08-flex";
+  body: string;
+  collection: "docs";
+  data: any
+} & { render(): Render[".md"] };
+"current/09-grid.md": {
+	id: "current/09-grid.md";
+  slug: "current/09-grid";
+  body: string;
+  collection: "docs";
+  data: any
+} & { render(): Render[".md"] };
+"current/10-formularios.md": {
+	id: "current/10-formularios.md";
+  slug: "current/10-formularios";
+  body: string;
+  collection: "docs";
+  data: any
+} & { render(): Render[".md"] };
+"current/11-imagenes.md": {
+	id: "current/11-imagenes.md";
+  slug: "current/11-imagenes";
+  body: string;
+  collection: "docs";
+  data: any
+} & { render(): Render[".md"] };
+"current/12-utilidades.md": {
+	id: "current/12-utilidades.md";
+  slug: "current/12-utilidades";
+  body: string;
+  collection: "docs";
+  data: any
+} & { render(): Render[".md"] };
+"current/13-ejemplos.mdx": {
+	id: "current/13-ejemplos.mdx";
+  slug: "current/13-ejemplos";
+  body: string;
+  collection: "docs";
+  data: any
+} & { render(): Render[".mdx"] };
 "current/index.mdx": {
 	id: "current/index.mdx";
   slug: "current";
   body: string;
   collection: "docs";
-  data: InferEntrySchema<"docs">
+  data: any
 } & { render(): Render[".mdx"] };
 "older-cactusv3/01-uso.md": {
 	id: "older-cactusv3/01-uso.md";
   slug: "older-cactusv3/01-uso";
   body: string;
   collection: "docs";
-  data: InferEntrySchema<"docs">
+  data: any
 } & { render(): Render[".md"] };
 "older-cactusv3/02-descargar.mdx": {
 	id: "older-cactusv3/02-descargar.mdx";
   slug: "older-cactusv3/02-descargar";
   body: string;
   collection: "docs";
-  data: InferEntrySchema<"docs">
+  data: any
 } & { render(): Render[".mdx"] };
 "older-cactusv3/03-personalizar.mdx": {
 	id: "older-cactusv3/03-personalizar.mdx";
   slug: "older-cactusv3/03-personalizar";
   body: string;
   collection: "docs";
-  data: InferEntrySchema<"docs">
+  data: any
 } & { render(): Render[".mdx"] };
 "older-cactusv3/04-encabezados.md": {
 	id: "older-cactusv3/04-encabezados.md";
   slug: "older-cactusv3/04-encabezados";
   body: string;
   collection: "docs";
-  data: InferEntrySchema<"docs">
+  data: any
 } & { render(): Render[".md"] };
 "older-cactusv3/05-texto.md": {
 	id: "older-cactusv3/05-texto.md";
   slug: "older-cactusv3/05-texto";
   body: string;
   collection: "docs";
-  data: InferEntrySchema<"docs">
+  data: any
 } & { render(): Render[".md"] };
-"older-cactusv3/06-contenedores.md": {
-	id: "older-cactusv3/06-contenedores.md";
-  slug: "older-cactusv3/06-contenedores";
+"older-cactusv3/06-botones.md": {
+	id: "older-cactusv3/06-botones.md";
+  slug: "older-cactusv3/06-botones";
   body: string;
   collection: "docs";
-  data: InferEntrySchema<"docs">
+  data: any
 } & { render(): Render[".md"] };
-"older-cactusv3/06-grid.md": {
-	id: "older-cactusv3/06-grid.md";
-  slug: "older-cactusv3/06-grid";
+"older-cactusv3/07-contenedores.md": {
+	id: "older-cactusv3/07-contenedores.md";
+  slug: "older-cactusv3/07-contenedores";
   body: string;
   collection: "docs";
-  data: InferEntrySchema<"docs">
-} & { render(): Render[".md"] };
-"older-cactusv3/07-botones.md": {
-	id: "older-cactusv3/07-botones.md";
-  slug: "older-cactusv3/07-botones";
-  body: string;
-  collection: "docs";
-  data: InferEntrySchema<"docs">
+  data: any
 } & { render(): Render[".md"] };
 "older-cactusv3/08-flex.md": {
 	id: "older-cactusv3/08-flex.md";
   slug: "older-cactusv3/08-flex";
   body: string;
   collection: "docs";
-  data: InferEntrySchema<"docs">
+  data: any
 } & { render(): Render[".md"] };
-"older-cactusv3/09-formularios.md": {
-	id: "older-cactusv3/09-formularios.md";
-  slug: "older-cactusv3/09-formularios";
+"older-cactusv3/09-grid.md": {
+	id: "older-cactusv3/09-grid.md";
+  slug: "older-cactusv3/09-grid";
   body: string;
   collection: "docs";
-  data: InferEntrySchema<"docs">
+  data: any
 } & { render(): Render[".md"] };
-"older-cactusv3/10-tablas.md": {
-	id: "older-cactusv3/10-tablas.md";
-  slug: "older-cactusv3/10-tablas";
+"older-cactusv3/10-formularios.md": {
+	id: "older-cactusv3/10-formularios.md";
+  slug: "older-cactusv3/10-formularios";
   body: string;
   collection: "docs";
-  data: InferEntrySchema<"docs">
+  data: any
 } & { render(): Render[".md"] };
-"older-cactusv3/11-utilidades.md": {
-	id: "older-cactusv3/11-utilidades.md";
-  slug: "older-cactusv3/11-utilidades";
+"older-cactusv3/11-tablas.md": {
+	id: "older-cactusv3/11-tablas.md";
+  slug: "older-cactusv3/11-tablas";
   body: string;
   collection: "docs";
-  data: InferEntrySchema<"docs">
+  data: any
+} & { render(): Render[".md"] };
+"older-cactusv3/12-utilidades.md": {
+	id: "older-cactusv3/12-utilidades.md";
+  slug: "older-cactusv3/12-utilidades";
+  body: string;
+  collection: "docs";
+  data: any
 } & { render(): Render[".md"] };
 "older-cactusv3/index.mdx": {
 	id: "older-cactusv3/index.mdx";
   slug: "older-cactusv3";
   body: string;
   collection: "docs";
-  data: InferEntrySchema<"docs">
+  data: any
 } & { render(): Render[".mdx"] };
 };
 
@@ -293,5 +384,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	type ContentConfig = typeof import("../src/content/config.js");
+	type ContentConfig = never;
 }

@@ -21,9 +21,7 @@
         <a href="/start" class="nav-link">Uso</a>
       </li>
       <li class="nav-item">
-        <a href="/guides" style="color:var(--font-color);"
-          >Docs 
-        </a>
+        <a href="/current" style="color:var(--font-color);">Docs </a>
       </li>
       <li class="nav-item">
         <a href="/custom" class="nav-link">Personalizar</a>
@@ -183,7 +181,9 @@
     background-color: #fff;
     box-shadow: 0px 2px 25px #d9d9d9;
     border-radius: 40px;
-    transition: 0.2s ease background-color, 0.2s ease opacity;
+    transition:
+      0.2s ease background-color,
+      0.2s ease opacity;
   }
 
   #light-mode-toggle span:before,
@@ -194,7 +194,9 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    transition: 0.5s ease transform, 0.2s ease background-color;
+    transition:
+      0.5s ease transform,
+      0.2s ease background-color;
   }
 
   #light-mode-toggle span:before {
@@ -274,7 +276,7 @@
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
   const navLink = document.querySelectorAll(".nav-link");
-
+  if (!hamburger || !navMenu) return;
   hamburger.addEventListener("click", mobileMenu);
   navLink.forEach((n) => n.addEventListener("click", closeMenu));
 
@@ -291,30 +293,29 @@
 
 <script is:inline>
   // creamos una constante para el checkbox
-const toggle = document.getElementById("light-mode-toggle");
+  const toggle = document.getElementById("light-mode-toggle");
 
-// creamos un evento para el checkbox
-toggle.addEventListener("change", (e) => {
-  // si el checkbox esta desactivado
-  if (e.target.checked == false) {
-    // guardamos en el localStorage que el modo oscuro esta desactivado
-    localStorage.setItem("dark", "false");
-    // removemos el atributo data-theme
-    document.documentElement.removeAttribute("data-theme");
-  } else {
-    // si el checkbox esta activado guardamos en el localStorage que el modo oscuro esta activado
-    localStorage.setItem("dark", "true");
+  // creamos un evento para el checkbox
+  toggle.addEventListener("change", (e) => {
+    // si el checkbox esta desactivado
+    if (e.target.checked == false) {
+      // guardamos en el localStorage que el modo oscuro esta desactivado
+      localStorage.setItem("dark", "false");
+      // removemos el atributo data-theme
+      document.documentElement.removeAttribute("data-theme");
+    } else {
+      // si el checkbox esta activado guardamos en el localStorage que el modo oscuro esta activado
+      localStorage.setItem("dark", "true");
+      // agregamos el atributo data-theme con el valor "dark"
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  });
+
+  // comprobamos si el modo oscuro esta activado
+  if (localStorage.getItem("dark") === "true") {
+    // si esta activado activamos el checkbox
+    toggle.querySelector("input").checked = true;
     // agregamos el atributo data-theme con el valor "dark"
     document.documentElement.setAttribute("data-theme", "dark");
   }
-});
-
-// comprobamos si el modo oscuro esta activado
-if (localStorage.getItem("dark") === "true") {
-  // si esta activado activamos el checkbox
-  toggle.querySelector("input").checked = true;
-  // agregamos el atributo data-theme con el valor "dark"
-  document.documentElement.setAttribute("data-theme", "dark");
-}
-
 </script>

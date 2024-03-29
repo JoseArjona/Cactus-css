@@ -1,0 +1,70 @@
+---
+title: "Ejemplos"
+---
+
+import Popover from "../../../components/Examples/Popover.astro";
+import Dialog from "../../../components/Examples/Dialog.astro";
+import Details from "../../../components/Examples/Details.astro";
+
+Ejemplos variados de lo que se puede hacer usando el marco de cactus. (En el futuro de irán agregando más)
+
+:::caution
+Debido al contenedor de documentación es probable que las demos se muestren en una posición diferente a la original
+:::
+
+## Details
+
+```html
+<details class="radius br-yellow px">
+  <summary class="txt-yellow">Ver más información</summary>
+  <div class="content">
+    <h3>Genial</h3>
+    <img class="img radius" src="cactus.jpg" alt="Foto de un cactus" />
+  </div>
+</details>
+```
+
+<Details />
+
+## Popover
+
+```html
+<button
+  class="chip br-primary"
+  popovertarget="message"
+  popovertargetaction="toggle"
+>
+  Mostrar
+</button>
+
+<div id="message" popover class="radius px br-none">
+  <p><strong class="txt-gradient">Hola!</strong> Desde el popover</p>
+</div>
+```
+
+<Popover />
+
+## Dialog
+
+```html
+<dialog id="modal" class="br-none radius">
+  <div class="card content">
+    <p>Hola dialog</p>
+  </div>
+  <button class="btn red" onClick="this.parentElement.close()">Cerrar</button>
+</dialog>
+
+<button class="btn txt-dark" id="show-dialog">Abrir Dialog</button>
+```
+
+Script requerido:
+
+```js
+const showDialog = document.querySelector("#show-dialog");
+showDialog.addEventListener("click", function () {
+  const alertDialog = document.querySelector("#modal");
+  alertDialog.showModal();
+});
+```
+
+<Dialog />

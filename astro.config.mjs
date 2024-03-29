@@ -9,7 +9,7 @@ export default defineConfig({
       title: 'Cactus CSS',
       favicon: '/assets/logo-dk.svg',
       customCss: [
-        './src/styles/cactus3.css',
+        './src/styles/cactus4.css',
       ],
     }
   )]

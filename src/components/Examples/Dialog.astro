@@ -1,0 +1,16 @@
+<dialog id="modal" class="br-none radius">
+  <div class="card content">
+    <p>Hola dialog</p>
+  </div>
+  <button class="btn red" onClick="this.parentElement.close()">Cerrar</button>
+</dialog>
+
+<button class="btn txt-dark" id="show-dialog">Abrir Dialog</button>
+
+<script>
+  const showDialog = document.querySelector("#show-dialog");
+  showDialog.addEventListener("click", function () {
+    const alertDialog = document.querySelector("#modal");
+    alertDialog.showModal();
+  });
+</script>
