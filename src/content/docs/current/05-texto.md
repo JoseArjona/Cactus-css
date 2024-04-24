@@ -23,8 +23,8 @@ Esta sección incluye clases para modificar el tamaño, peso, alineación, color
 
 Cactus CSS proporciona clases de utilidad para modificar el tamaño del texto:
 
-- `txt-bg`: Aumenta el tamaño del texto a 1.25rem.
-  `txt-sm`: Disminuye el tamaño del texto a 1rem.
+- `txt-bg`: Aumenta el tamaño del texto a 1.25em.
+  `txt-sm`: Disminuye el tamaño del texto a 1em.
 
 ```html
 <p class="txt-bg">Texto con tamaño grande.</p>

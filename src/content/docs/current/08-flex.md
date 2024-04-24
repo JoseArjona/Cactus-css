@@ -180,3 +180,71 @@ A la clase card se le puede agregar las clases de colores `br-color`, `txt-color
 </article>
 
 ---
+
+## Cover
+
+Permite cubrir el espacio necesario en el contenedor
+
+- Propiedad:
+  - object-fit: cover;
+  - width: 100%;
+    En `f-row`:
+    - width: min-content;
+    - height: 100%;
+
+```html
+<article class="card f-row content gap-sm">
+  <header>
+    <picture class="cover">
+      <img
+        class="radius"
+        src="https://th.bing.com/th/id/OIP.My7lN7GOn16w60PnKEK1_wHaFU?rs=1&pid=ImgDetMain"
+        alt="accusamus"
+      />
+    </picture>
+  </header>
+  <div class="pl">
+    <h2 class="txt-center">Suiza</h2>
+    <p>
+      = Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi iste
+      reprehenderit nesciunt a ipsa iure, recusandae atque excepturi quos, esse
+      accusamus placeat hic! Illo sint repudiandae neque, eaque vero error?
+    </p>
+    <footer class="flex right">
+      <button class="btn ">Abrir</button>
+    </footer>
+  </div>
+</article>
+```
+
+:::caution
+Debido a los estilos usados en la documentación la preview no es 100 fiel al resultado. Para mejores resultados obsérvalo en un entorno normal.
+:::
+
+---
+
+ <article class="card f-row content gap-sm">
+        <header >
+          <picture class="cover">
+            <img
+              class="radius"
+              src="https://th.bing.com/th/id/OIP.My7lN7GOn16w60PnKEK1_wHaFU?rs=1&pid=ImgDetMain"
+              alt="accusamus"
+            />
+          </picture>
+        </header>
+        <div class="pl">
+          <h2 class="txt-center">Suiza</h2>
+          <p>
+            = Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+            iste reprehenderit nesciunt a ipsa iure, recusandae atque excepturi
+            quos, esse accusamus placeat hic! Illo sint repudiandae neque, eaque
+            vero error?
+          </p>
+          <footer class='flex right'>
+            <button class="btn ">Abrir</button>
+          </footer>
+        </div>
+      </article>
+
+---

@@ -1,0 +1,102 @@
+---
+title: Instalar
+---
+
+import { LinkCard } from "@astrojs/starlight/components";
+
+## Que incluye?
+
+<section>
+  <div>
+    <p>Todo viene en una carpeta comprimida, la cual contiene:</p>
+    <ul>
+      <li>
+        cactus4.min.css → Archivo raíz, encargado de vincular los demás. Es el
+        único que necesitas importar en tu html. Además es donde se define los
+        colores y tipografía
+      </li>
+      <li>
+        cactus4nt.min.css → Archivo raíz, encargado de vincular los demás. No
+        incluye fuentes ni temas. (Puedes eliminar el archivo si no lo usas)
+      </li>
+      <li>fonts.min.css → Archivo de fuentes</li>
+      <li>
+        skeleton.min.css → Archivo con formateador, sistema de grid
+        (responsive),contenedores y helpers
+      </li>
+      <li>elements.min.css → Donde se define las formas y 'componentes'</li>
+    </ul>
+    <p>
+      Todos los archivos tienen una comprensión para reducir el peso. La suma de
+      ellos alcanza apenas los 10kb
+    </p>
+  </div>
+</section>
+
+## Via CDN
+
+### Version Por Defecto
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/cactus_css@4.0.0/v4/cactus4.min.css"
+/>
+```
+
+### Version Sin Temas Ni Fuentes
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/cactus_css@4.0.0/v4/cactus4nt.min.css"
+/>
+```
+
+## Via administrador de paquetes
+
+Usa el administrador de paquetes que te guste más:
+
+- npm
+
+```sh
+ npm i cactus_css
+```
+
+- pnpm
+
+```sh
+ pnpm i cactus_css
+```
+
+- bun
+
+```sh
+ bun i cactus_css
+```
+
+### Importar
+
+Simplemente en la parte superior de tu app en cualquier framework web usa cualquiera de las 2 versiones según tu caso:
+
+#### Por Defecto (Con tema y fuente):
+
+```js
+import "cactus_css/v4/cactus4.min.css";
+```
+
+#### Sin tema (Sin tema ni fuente; util para personalizar)
+
+```js
+import "cactus_css/v4/cactus4nt.min.css";
+import "../styles/themes.css"; // <- ubicación de tu archivo css con las clases root.
+```
+
+## Descargar archivos
+
+<LinkCard
+  title="CACTUS CSSv4"
+  description="Descarga la version completa, con todos los estilos"
+  href="../../assets/css/cactus4.zip"
+  download="styles.zip"
+/>

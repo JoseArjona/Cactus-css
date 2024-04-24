@@ -2,25 +2,25 @@
 title: "Personalizar"
 ---
 
-Si deseas personalizar los colores y la tipografía solo tienes que cambiarlos en un archivo css, busca el archivo `cactus4.css` :
+## Plantilla / Variables
+
+Si deseas personalizar colores, fuentes, border, etc. Puedes hacerlo usando las siguientes reglas y variables. Sigue leyendo para conocer como modificarla según tu instalación
 
 ```css
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300..600&display=swap");
-
 :root {
   --font1: "Montserrat", system-ui, sans-serif;
-  --font2: "Inter", system-ui, sans-serif;
+  --font2: "DM Sans", system-ui, sans-serif;
   --space: 1.5rem;
   --radius: 0.7rem;
-  --text: #15160d;
-  --background: radial-gradient(hsl(220, 40%, 94%), hsl(220, 14%, 94%));
   --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.205);
-  --primary: #46eb3d;
-  --secondary: #6bd5f5;
-  --accent: #9bc200;
+  --text: #000000;
+  --background: #f0f0f0;
+  --primary: #1aff94;
+  --secondary: #e7c88e;
+  --accent: #47b5f5;
   --green: #45d25a;
   --red: #dc3243;
-  --yellow: #f2c94c;
+  --yellow: #f3a60c;
   --blue: #2495ca;
   --dark: #0e0e0e;
   --light: #fefefe;
@@ -28,24 +28,155 @@ Si deseas personalizar los colores y la tipografía solo tienes que cambiarlos e
 }
 
 :root[data-theme="dark"] {
-  --text: #f1f2e9;
-  --background: #212121;
-  --primary: #7be576;
-  --secondary: #0a7392;
-  --accent: #d8ff3d;
+  --text: #ffffff;
+  --background: #0f0f0f;
+  --primary: #00e67a;
+  --secondary: #d8ff3d;
+  --accent: #0a78b8;
   --green: #45d25a;
   --red: #dc3243;
   --yellow: #f2c94c;
   --blue: #2495ca;
-  --dark: #2b2b2b;
+  --dark: #080616;
   --light: #f1f2e9;
   --contrast: var(--dark);
 }
 ```
 
-al ser un archivo css, realmente es muy fácil cambiar los valores que no te agraden, como las sombras, efectos hover y demás.
+Para personalizar de forma recomendable importa el archivo `cactus4nt.min.css` en lugar del `cactus4.min.css`. Ya que este es una version que quita el tema clases de root/variables y fuentes.
+También puedes optar por importar la version normal `cactus4.min.css` y después importar un archivo propio con las variables/plantilla personalizada.
+En cualquiera de los 2 casos que desees. Es importante que crees un archivo personalizado donde tengas las mismas variables mostradas en la plantilla de arriba.
+
+## Version Administrador de Paquetes
+
+Crea tu archivo themes.css o el nombre que desees, en el directorio normal de tu app.
+Copia la plantilla de arriba y modifica los valores a tu gusto. Al importar es importante que importes los archivos en el siguiente orden:
+
+1. Archivo de fuente // Si la tienes en tu themes.css o externa en tu link o imports solo asegúrate de ponerla antes.
+2. Archivo personalizado basado en la plantilla.
+3. Archivo `cactus4nt.min.css`
+
+   Ejemplo:
+
+```js
+// ejemplo Archivo Principal de mi app
+import "/styles/themes.css";
+import "cactus_css/v4/cactus4nt.min.css";
+```
+
+:::caution
+Si usas la version `cactus4.min.css` El orden de importación cambia (debido a que realmente estamos sobrescribiendo las reglas) :
+
+1. Archivo de fuente // Si la tienes en tu themes.css o externa en tu link o imports solo asegúrate de ponerla antes.
+2. Archivo `cactus4.min.css`
+3. Archivo personalizado basado en la plantilla.
+   :::
 
 :::tip
+Si deseas usar las fuentes por defecto, usa la version CDN interna llamando `import "cactus_css/v4/fonts.min.css"`en el mismo archivo raíz (index.html/astro/jsx/svelte) o puedes descargarlas desde [fountsource](https://fontsource.org/fonts/)
+
+```js
+// ejemplo Archivo Principal de mi app
+import "cactus_css/v4/fonts.min.css"; // <- o la fuente que descargues
+import "/styles/themes.css";
+import "cactus_css/v4/cactus4nt.min.css";
+```
+
+:::
+
+## Version CDN
+
+Crea tu archivo themes.css o el nombre que desees, en el directorio normal de tu app.
+Copia la plantilla de arriba y modifica los valores a tu gusto. Al importar es importante que importes los archivos en el siguiente orden:
+
+1. Archivo de fuente // Si la tienes en tu themes.css o externa en tu link o imports solo asegúrate de ponerla antes.
+2. Archivo personalizado basado en la plantilla.
+3. Archivo `cactus4nt.min.css`
+
+   Ejemplo:
+
+```js
+// ejemplo Archivo Principal de mi app
+import "/styles/themes.css"; // o via link :
+<link
+  rel="stylesheet"
+  href="./styles/themes.css"
+/>
+// Archivo html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/cactus_css@4.0.0/v4/cactus4nt.min.css"
+/>
+```
+
+:::caution
+Si usas la version `cactus4.min.css` El orden de importación cambia (debido a que realmente estamos sobrescribiendo las reglas) :
+
+1. Archivo de fuente // Si la tienes en tu themes.css o externa en tu link o imports solo asegúrate de ponerla antes.
+2. Archivo `cactus4.min.css`
+3. Archivo personalizado basado en la plantilla.
+   :::
+
+:::tip
+Si deseas usar las fuentes por defecto, usa la version CDN interna llamando `import "cactus_css/v4/fonts.min.css"`en el mismo archivo raíz (index.html/astro/jsx/svelte) o puedes descargarlas desde [fountsource](https://fontsource.org/fonts/)
+
+```js
+// ejemplo Archivo Principal de mi app
+import "cactus_css/v4/fonts.min.css"; // <- o la fuente que descargues
+import "/styles/themes.css"; // o via link en tu html :
+<link
+  rel="stylesheet"
+  href="./styles/themes.css"
+/>
+// Archivo html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/cactus_css@4.0.0/v4/cactus4nt.min.css"
+/>
+```
+
+:::
+
+## Version Descargar de Paquete
+
+Si deseas personalizar los colores y la tipografía solo tienes que cambiarlos en un archivo css, busca el archivo `cactus4nt.min.css` y usa la plantilla. Al importa sigue el orden :
+
+1. Archivo de fuente // Si la tienes en tu themes.css o externa en tu link o imports solo asegúrate de ponerla antes.
+2. Archivo personalizado basado en la plantilla.
+3. Archivo `cactus4nt.min.css`
+
+Ejemplo:
+
+```js
+// ejemplo Archivo Principal de mi app
+<link rel="stylesheet" href=".../style/themes.css" />
+<link rel="stylesheet" href=".../style/cactus4nt.min.css" />
+```
+
+:::caution
+Si usas la version `cactus4.min.css` El orden de importación cambia (debido a que realmente estamos sobrescribiendo las reglas) :
+
+1. Archivo de fuente // Si la tienes en tu themes.css o externa en tu link o imports solo asegúrate de ponerla antes.
+2. Archivo `cactus4.min.css`
+3. Archivo personalizado basado en la plantilla.
+   :::
+
+:::tip
+Si deseas usar las fuentes por defecto, usa la version CDN interna llamando via link o en css`cactus_css/v4/fonts.min.css`en el mismo archivo raíz (index.html/astro/jsx/svelte) o puedes descargarlas desde [fountsource](https://fontsource.org/fonts/)
+
+```html
+// ejemplo Archivo Principal de mi html
+<link rel="stylesheet" href=".../style/fonts.min.css" />
+<!-- <- o la fuente que descargues -->
+<link rel="stylesheet" href=".../style/themes.css" />
+<link rel="stylesheet" href=".../style/cactus4nt.min.css" />
+<!-- Importa de forma local -->
+```
+
+:::
+
+:::tip
+Al ser un archivo css, realmente es muy fácil cambiar los valores que no te agraden, como las sombras, efectos hover y demás.
 Una vez realices los cambios en el archivo css, si tu editor tiene un formateador recuerda comprimir el archivo css.
 :::
 
@@ -56,7 +187,7 @@ Pagina para comprimir CSS:
 
 También puedes usar una clase y modificarla, siendo más especifico o usando ´!important´
 
-### Crear Tema
+## Crear Tema
 
 Si deseas crear un tema nuevo, solo tienes que crear un archivo css y definir una clase, poniendo las variables que deseas cambiar(las variables que admite son las que se muestran arriba en root) :
 
@@ -81,7 +212,7 @@ Si deseas crear un tema nuevo, solo tienes que crear un archivo css y definir un
 Puedes usar este increíble recurso para crear los temas https://www.realtimecolors.com/ . Al darle export usa css y activa el checkbox de Themes, para tener el tema dark.
 :::
 
-### Cambio de tema usando JS
+## Cambio de tema usando JS
 
 Para cambiar el tema solo tienes que cambiar la clase del body o el html, por ejemplo:
 

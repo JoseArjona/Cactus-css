@@ -1,0 +1,84 @@
+<div class="middle center">
+  <div class="card f-col original" id="customCard">
+    <figure>
+      <img
+        class="br-dark radius"
+        src="https://images.pexels.com/photos/16310478/pexels-photo-16310478/free-photo-of-planta-hojas-maceta-guijarros.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        alt="cactus venta"
+      />
+    </figure>
+    <div class="body">
+      <div class="txt-bg txt-center pt">Adorno Cactus</div>
+    </div>
+    <div class="footer flex f-col center px">
+      <button class="btn txt-bold txt-bg flex center">Ver Producto</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .elegant {
+    --textFam: Times, serif;
+    --primario: #e091f7;
+    --fontColor: #2b2b2a;
+    --bg: #f6f6f4;
+    --radio: 99px;
+  }
+
+  .original {
+    --textFam: var(--font2);
+    --primario: var(--green);
+    --fontColor: var(--text);
+    --bg: var(--contrast);
+    --radio: var(--radius);
+  }
+
+  .cactstrap {
+    --textFam: system-ui, sans-serif;
+    --primario: #5666f2;
+    --fontColor: #dedede;
+    --bg: #222222;
+    --radio: 5px;
+  }
+
+  .codex {
+    --textFam: "Courier New", Courier, monospace;
+    --primario: #0c7886;
+    --fontColor: #dedede;
+    --bg: #0a0a28;
+    --radio: 0px;
+  }
+
+  #customCard.card {
+    background: var(--bg);
+    color: var(--fontColor);
+    & div {
+      font-family: var(--textFam) !important;
+    }
+    & .btn {
+      border-radius: var(--radio);
+      background: var(--primario);
+      color: var(--fontColor);
+      font-family: var(--textFam) !important;
+    }
+  }
+</style>
+
+<script>
+  const customClases = ["original", "elegant", "cactstrap", "codex"];
+  const customCard = document.getElementById("customCard");
+  let indiceClaseActual = 0;
+
+  function rotarClases() {
+    customCard.classList.remove(
+      customClases[
+        (indiceClaseActual - 1 + customClases.length) % customClases.length
+      ]
+    );
+    customCard.classList.add(customClases[indiceClaseActual]);
+    indiceClaseActual = (indiceClaseActual + 1) % customClases.length;
+    console.log(indiceClaseActual);
+  }
+
+  setInterval(rotarClases, 2000);
+</script>

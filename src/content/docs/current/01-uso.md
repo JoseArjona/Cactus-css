@@ -2,7 +2,7 @@
 title: Antes de empezar
 ---
 
-# Opciones de uso
+## Etiquetas funcionales
 
 Para el correcto comportamiento es importante que tengas las siguientes etiquetas en tu etiqueta head de tu html.
 
@@ -12,22 +12,28 @@ Para el correcto comportamiento es importante que tengas las siguientes etiqueta
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 ```
 
-## Descarga el archivo
+## Versiones Main
 
-Puedes descargar la carpeta 'styles' y descomprime en tu carpeta de trabajo, después importa el archivo cactus3.css en tu documento html.
+En la siguiente sección de Descargas se mostraran las opciones que se tienen. Pero debes de saber que existen 2 versiones al importar el archivo principal.
 
-```html
-<link rel="stylesheet" href=".../style/cactus4.css" />
-<!-- Importa de forma local -->
-```
+### Version Por Defecto
 
-## Uso por link
+Esta opción es la que se usa por defecto y contiene las clases de tema, asi como las fuentes (tipografías) correspondientes. Al importarla se tiene que llamar de la siguiente forma:
 
-Puedes copiar el link y pegarlo en tu etiqueta head de tu html. Y simplemente colocar las clases en tus etiquetas, para guiarte puedes ir a componentes. (Ten en cuenta que es una version sujeta a cambios constantes)
+`cactus4.min.css`
 
-```html
-<link
-  rel="stylesheet"
-  href="https://cactus-css.vercel.app/assets/css/cactus3.css"
-/>
-```
+[Conoce las formas de llamarlo según su instalación](/current/02-instalar)
+
+### Version Sin temas ni tipografía
+
+Esta opción es la que se usa para [Personalizar](/current/03-personalizar) el estilo, puedes agregar tus propias fuentes y colores. No Contiene las clases de tema, asi como las fuentes (tipografías) correspondientes. Al importarla se tiene que llamar de la siguiente forma:
+
+`cactus4nt.min.css`
+
+[Conoce las formas de llamarlo según su instalación](/current/02-instalar)
+
+## Recomendaciones
+
+Usa la versión correspondiente para tu caso. Si usas fuentes propias asegúrate de instalarlas o usar un cdn (Puedes usar [Fontsource](https://fontsource.org/)).
+
+Las modificaciones a los estilos es recomendable minificar si tu framework no lo hace por tí.

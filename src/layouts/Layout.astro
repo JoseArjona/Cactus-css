@@ -1,13 +1,12 @@
 ---
-import NavBar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/cactus4.css";
 /* const canonicalURL = new URL(Astro.url.pathname, Astro.site); */
 
-const image = "./assets/mainCactus.png"
+const image = "./assets/mainCactus.png";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -16,9 +15,9 @@ const image = "./assets/mainCactus.png"
     <link rel="icon" href="/assets/logo-dk.svg" />
     <meta name="title" content="Cactus Css" />
     <meta
-    name="description"
-    content="Cactus CSS es un marco CSS ligero, responsivo y personalizable. ¡Pesa menos de 10 kb!"
-  />
+      name="description"
+      content="Cactus CSS es un marco CSS ligero, responsivo y personalizable. ¡Pesa menos de 10 kb!"
+    />
     <meta name="copyright" content="JOSE ARJONA" />
     <meta name="author" content="JOSE ARJONA" />
     <meta name="robots" content="index, follow" />
@@ -27,26 +26,37 @@ const image = "./assets/mainCactus.png"
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://cactuscss.vercel.app/" />
+    <meta property="og:url" content="https://cactus-css.vercel.app/" />
     <meta property="og:title" content="Cactus Css" />
     <meta
       property="og:description"
       content="Cactus CSS es un marco CSS ligero, responsivo y personalizable. ¡Pesa menos de 10 kb!"
     />
-    <meta property="og:image" content="https://cactus-css.vercel.app/assets/mainCactus.png" />
+    <meta
+      property="og:image"
+      content="https://cactus-css.vercel.app/assets/mainCactus.png"
+    />
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://cactuscss.vercel.app/" />
+    <meta property="twitter:url" content="https://cactus-css.vercel.app/" />
     <meta property="twitter:title" content="Cactus Css" />
-    <meta property="twitter:description" content="Cactus CSS es un marco CSS ligero, responsivo y personalizable. ¡Pesa menos de 10 kb!" />
-    <meta property="twitter:image" content="https://cactus-css.vercel.app/assets/mainCactus.png" />
-   
+    <meta
+      property="twitter:description"
+      content="Cactus CSS es un marco CSS ligero, responsivo y personalizable. ¡Pesa menos de 10 kb!"
+    />
+    <meta
+      property="twitter:image"
+      content="https://cactus-css.vercel.app/assets/mainCactus.png"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <!-- 
 		<link rel="canonical" href={canonicalURL} /> -->
     <title>Cactus Css</title>
   </head>
   <body style="overflow-x:hidden">
-    <header><NavBar /></header>
     <slot />
     <footer><Footer /></footer>
   </body>

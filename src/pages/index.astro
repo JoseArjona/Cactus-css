@@ -1,133 +1,243 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/Navbar.astro";
+import Details from "../components/Examples/Details.astro";
+import Popover from "../components/Examples/Popover.astro";
+import Custom from "../components/Custom.astro";
+import ShowCase from "../components/ShowCase.astro";
 ---
 
 <Layout>
-  <main>
-    <section class="container" style="margin-bottom: 5vw;">
-      <article class="grid col-2 md-col-2 sm-col-1">
-        <picture class="card secondary">
-          <img
-            src="/assets/mainCactus.png"
-            alt="Cactus-CanvaIA-Personaje"
-            class="sm-hidden"
-            width="100%"
-            height="100%"
-            
-          />
-        </picture>
+  <div class="bg">
+    <NavBar />
+    <main class="full-screen">
+      <div class="flex f-col center middle pt mt">
+        <span class="txt-center display-2">
+          Cultiva Diseños Espectaculares
+        </span>
+      </div>
+      <section class="grid col-3 md-col-3 sm-col-1 content center middle">
+        <div class="flex center middle sm-none">
+          <strong class="chip transparent br-primary txt-bold"
+            >Personalizable</strong
+          >
+        </div>
+        <div class="grid center middle">
+          <figure class="grid center middle" style="width: 45vw">
+            <img
+              class="img aspect-box"
+              src="assets/logos.png"
+              alt="Imagen ilustrativa de un cactus hecho de cristal en 3D"
+            />
+          </figure>
+        </div>
+        <div class="flex center middle">
+          <strong class="chip transparent br-primary txt-bold"
+            >Ligero - 10kb</strong
+          >
+        </div>
+      </section>
+      <header class="flex center middle">
+        <h1 class="txt-gradient display-1">CACTUS CSS</h1>
+        <span class="pt pl txt-bold txt-sm">V4.0.0</span>
+      </header>
+      <div class="flex center">
+        <a
+          href="/current/"
+          class="btn transparent br-primary"
+          target="_blank"
+          rel="noopener noreferrer">Empezar</a
+        >
+      </div>
+    </main>
+    <section class="content">
+      <div
+        class="grid col-6 md-col-4 sm-col-1 mb pb"
+        style="max-width: 1090px; margin:auto; "
+      >
+        <article
+          class="card contrast center middle md-span-2 sm-span-1 sm-none"
+        >
+          <div>
+            <button class="btn gradient txt-contrast br-none">HolaCactus</button
+            >
+          </div>
+        </article>
+        <article class="card contrast content middle span-2 sm-span-1">
+          <div class="input">
+            <label for="email">Correo Electrónico</label>
+            <input
+              class="br-primary"
+              type="text"
+              id="text"
+              placeholder="example@mail.com"
+            />
+          </div>
+        </article>
+        <article class="card content span-3 md-span-2 sm-span-1">
+          <h2>Crea más, preocúpate menos.</h2>
+        </article>
+        <article
+          class="card contrast content span-3 md-span-2 sm-span-1 middle center"
+        >
+          <div>
+            <Details />
+          </div>
+        </article>
+        <article class="card contrast content middle center sm-span-1">
+          <div><Popover /></div>
+        </article>
+        <article
+          class="card contrast content span-2 md-span-3 middle center sm-span-1"
+        >
+          <div>
+            <img
+              src="https://images.pexels.com/photos/409813/pexels-photo-409813.jpeg?auto=compress&cs=tinysrgb&w=300"
+              alt="imagen de un cactus"
+              class="aspect-large radius"
+            />
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+  <div class="bg">
+    <section class="container">
+      <aside class="br-accent radius content flex between middle">
+        <header>
+          <h2>Disponible en :</h2>
+        </header>
         <div>
-          <h1 class="display-1" style="margin-top: 150px;" id="heroT">
-            CACTUS CSS
-          </h1>
-          <div class="middle">
-            <p>
-              Cactus CSS es un marco CSS ligero, responsivo y personalizable que
-              te ayuda a crear sitios web de forma rápida y sencilla. <b>
-                Pesa menos de 10 kb! </b
-              >, por lo que puedes diseñar tu sitio web, sin sacrificar el
-              rendimiento!
-            </p>
-          </div>
-          <a href="/start" class="btn green" type="button">Comenzar</a>
+          <article class="content">
+            <img
+              src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3220593/npm-icon-sm.png"
+              alt="Npm logo"
+              width="100px"
+              class="filterImg"
+            />
+          </article>
         </div>
-      </article>
+        <article class="content">
+          <img
+            src="https://www.jsdelivr.com/assets/8aab44d2735c604d59887d32cc74b517689e5d5c/img/jsDelivr.logo.svg"
+            alt="CDN Logo"
+            class="filterImg"
+            width="120px"
+          />
+        </article>
+        <article class="txt-dark content txt-bold">
+          <img
+            src="https://cdn4.iconfinder.com/data/icons/folders-69/64/zip_folder-512.png"
+            alt="zip file icon"
+            class="filterImg"
+            width="100px"
+          />
+        </article>
+      </aside>
+      <section>
+        <header class="pt">
+          <h2 class="txt-center display-3">¿Porqué Cactus CSS?</h2>
+        </header>
+        <div
+          class="grid col-2 md-col-2 sm-col-1 content gap-bg f-wrap center middle"
+        >
+          <article class="card f-col content primary txt-dark pr">
+            <h3>Responsivo</h3>
+            <p>
+              Cactus CSS está diseñado para ser <strong> responsivo</strong>,
+              por lo que su sitio web se verá genial en cualquier dispositivo.
+              Ya sea una computadora portátil, una tableta o un dispositivo
+              móvil.
+            </p>
+          </article>
+          <article class="card f-col content gradient txt-dark">
+            <h3>Ligero y Sencillo</h3>
+            <p>
+              Con un <strong>peso de 10 kb</strong> y <strong
+                >2.6kb!! gzipped + min</strong
+              >, Cactus CSS es uno de los marcos más ligeros que existen. ¡Eso
+              significa tiempos de carga más rápidos para sus visitantes y
+              mejores clasificaciones de SEO para usted!
+            </p>
+          </article>
+        </div>
+      </section>
     </section>
-
-    <section>
-      <div class="display-3 txt-center">¿Porqué Cactus CSS?</div>
+    <section class="container">
+      <article class="grid col-2 sm-col-1 content">
+        <header class="middle">
+          <h2 class="display-3">Personalizable</h2>
+          <p>
+            Establecer el estilo con más identidad y personalidad, es posible de
+            forma fácil y rápida.
+          </p>
+          <div class="flex">
+            <a
+              class="chip secondary br-none txt-dark"
+              href="current/03-personalizar/"
+              target="_blank">Míralo en la documentación</a
+            >
+          </div>
+        </header>
+        <Custom client:visible />
+      </article>
       <br />
-      <article class="container grid col-3 md-col-2 sm-col-1">
-        <div class="card green txt-black sm-span-3">
-          <picture>
-            <img
-              src="/assets/responsive.webp"
-              alt="Blush-Responsive"
-              class="sm-hidden"
-              width="100%"
-              height="100%"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-          <div class="txt-center">
-            <h2 style="margin-top: 3.55rem;">Diseño Responsivo</h2>
-            <p>
-              Cactus CSS está diseñado para ser receptivo, por lo que su sitio
-              web se verá genial en cualquier dispositivo. Ya sea una
-              computadora portátil, una tableta o un dispositivo móvil.
-            </p>
-          </div>
-        </div>
-        <div class="card blue txt-white sm-span-3">
-          <picture>
-            <img
-              src="/assets/customImg.webp"
-              alt="Blush-Custom"
-              class="sm-hidden"
-              width="100%"
-              height="100%"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-          <div class="txt-center">
-            <h2 style="margin-top: 100px;">Personalizable</h2>
-            <p>
-              Con Cactus CSS, puede personalizar fácilmente el aspecto de su
-              sitio web con solo unos pocos clics. Cambie la combinación de
-              colores, el tamaño de fuente, las sombras y más.
-            </p>
-          </div>
-        </div>
-        <div class="card yellow txt-center txt-black sm-span-3">
-          <picture>
-            <img
-              src="/assets/ligh.png"
-              alt="Blush-ligh"
-              class="sm-hidden"
-              width="100%"
-              height="100%"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-          <h2 style="margin-top: 1.55rem;">Ligero y Rápido</h2>
-          <p>
-            Con un peso de menos de 10 kb, Cactus CSS es uno de los marcos más
-            ligeros que existen. ¡Eso significa tiempos de carga más rápidos
-            para sus visitantes y mejores clasificaciones de SEO para usted!
-          </p>
-        </div>
-        <div class="card red txt-white span-3">
-          <div class="flex" style="">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
-              fill="#fff"
-              viewBox="0 0 256 256"
-              ><path
-                d="M221.07,144.41A96.68,96.68,0,0,0,181,88h59a8,8,0,0,0,0-16H159a32,32,0,0,0-62,0H16a8,8,0,0,0,0,16H75a96.68,96.68,0,0,0-40.07,56.41A32,32,0,1,0,51.08,146,80.6,80.6,0,0,1,99,93.44a32,32,0,0,0,58.06,0A80.6,80.6,0,0,1,204.92,146a32,32,0,1,0,16.15-1.57ZM56,176a16,16,0,1,1-16-16A16,16,0,0,1,56,176Zm72-80a16,16,0,1,1,16-16A16,16,0,0,1,128,96Zm88,96a16,16,0,1,1,16-16A16,16,0,0,1,216,192Z"
-              ></path>
-            </svg>
-            <h3 style="margin: 10px;">Fácil de usar</h3>
-          </div>
-          <p>
-            Cactus CSS está diseñado para ser fácil de usar, incluso para
-            principiantes. ¡Simplemente descargue las plantillas y comience a
-            crear hermosos sitios web en muy poco tiempo!
-          </p>
-        </div>
-      </article>
+      <div class="showCase pt">
+        <ShowCase />
+      </div>
+      <br />
     </section>
-  </main>
+  </div>
 </Layout>
 
 <style>
-  @media screen and (max-width: 576px) {
-    #heroT {
-      margin-top: 15px !important;
-    }
+  html[data-theme="dark"] .bg {
+    background-image: url("./bg-dark.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*   mask-image: linear-gradient(black 80%, transparent); */
+  }
+  .bg {
+    --color: #1aa14e11;
+    background-color: var(--background);
+    background-image: linear-gradient(
+        0deg,
+        transparent 24%,
+        var(--color) 25%,
+        var(--color) 26%,
+        transparent 27%,
+        transparent 74%,
+        var(--color) 75%,
+        var(--color) 76%,
+        transparent 77%,
+        transparent
+      ),
+      linear-gradient(
+        90deg,
+        transparent 24%,
+        var(--color) 25%,
+        var(--color) 26%,
+        transparent 27%,
+        transparent 74%,
+        var(--color) 75%,
+        var(--color) 76%,
+        transparent 77%,
+        transparent
+      );
+    background-size: 55px 55px;
+  }
+  main {
+    padding-top: 2.8rem;
+  }
+
+  html[data-theme="dark"] .filterImg {
+    filter: invert();
+  }
+
+  .showCase {
+    max-width: 37.5rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
   }
 </style>

@@ -38,10 +38,28 @@ Estilos comunes para campos de entrada de texto (input) y áreas de texto (texta
 ```html
 <div class="input">
   <label for="email">Correo Electrónico</label>
-  <input type="email" id="email" />
+  <input type="email" id="email" placeholder="Correo@example.com" />
+  <br />
+  <label for="text">Personalizado con color clases</label>
+  <input
+    class="br-dark secondary txt-dark"
+    type="text"
+    id="text"
+    placeholder="Ejemplo"
+  />
+  <br />
+  <select name="select">
+    <option value="value1">Value 1</option>
+    <option value="value2" selected>Value 2</option>
+    <option value="value3">Value 3</option>
+  </select>
   <div class="pt">
     <label for="text">Dirección</label>
-    <textarea name="text" id="text"></textarea>
+    <textarea
+      name="text"
+      id="text"
+      placeholder="Escribe tu dirección"
+    ></textarea>
   </div>
 </div>
 ```
@@ -50,11 +68,22 @@ Estilos comunes para campos de entrada de texto (input) y áreas de texto (texta
 
 <div class="input">
   <label for="email">Correo Electrónico</label>
-  <input type="email" id="email">
-  <label for="email">Personalizado con color clases</label>
-  <input class="br-dark secondary" type="email" id="email">
+  <input type="email" id="email" placeholder="Correo@example.com" />
+  <br />
+  <label for="text">Personalizado con color clases</label>
+  <input class="br-dark secondary txt-dark" type="text" id="text" placeholder="Ejemplo" />
+  <br />
+  <select name="select">
+    <option value="value1">Value 1</option>
+    <option value="value2" selected>Value 2</option>
+    <option value="value3">Value 3</option>
+  </select>
   <div class="pt">
-  <label for="text">Dirección</label>
-  <textarea name="text" id="text" ></textarea>
+    <label for="text">Dirección</label>
+    <textarea
+      name="text"
+      id="text"
+      placeholder="Escribe tu dirección"
+    ></textarea>
   </div>
 </div>

@@ -11,6 +11,20 @@ export default defineConfig({
       customCss: [
         './src/styles/cactus4.css',
       ],
+      sidebar: [
+        {
+          label: 'Cactusv4',
+          badge: 'New',
+          collapsed: false,
+          autogenerate: { directory: 'current' },
+        },
+        {
+          label: 'Cactusv3',
+          badge: { text: 'Deprecada', variant: 'caution' },
+          collapsed: true,
+          autogenerate: { directory: 'older-cactusv3' },
+        },
+      ],
     }
   )]
 });

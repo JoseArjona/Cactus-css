@@ -192,9 +192,9 @@ declare module 'astro:content' {
   collection: "docs";
   data: any
 } & { render(): Render[".md"] };
-"current/02-descargar.mdx": {
-	id: "current/02-descargar.mdx";
-  slug: "current/02-descargar";
+"current/02-instalar.mdx": {
+	id: "current/02-instalar.mdx";
+  slug: "current/02-instalar";
   body: string;
   collection: "docs";
   data: any
