@@ -25,7 +25,7 @@ import ShowCase from "../components/ShowCase.astro";
         <div class="grid center middle">
           <figure class="grid center middle" style="width: 45vw">
             <img
-              class="img aspect-box"
+              class="img aspect-box animation-img"
               src="assets/logos.png"
               alt="Imagen ilustrativa de un cactus hecho de cristal en 3D"
             />
@@ -38,19 +38,19 @@ import ShowCase from "../components/ShowCase.astro";
         </div>
       </section>
       <header class="flex center middle">
-        <h1 class="txt-gradient display-1">CACTUS CSS</h1>
+        <h1 class="txt-gradient display-1 focus-in-expand">CACTUS CSS</h1>
         <span class="pt pl txt-bold txt-sm">V4.0.0</span>
       </header>
       <div class="flex center">
         <a
           href="/current/"
-          class="btn transparent br-primary"
+          class="btn transparent br-primary fade-in-bck"
           target="_blank"
           rel="noopener noreferrer">Empezar</a
         >
       </div>
     </main>
-    <section class="content">
+    <section class="content scrollShow">
       <div
         class="grid col-6 md-col-4 sm-col-1 mb pb"
         style="max-width: 1090px; margin:auto; "
@@ -59,7 +59,8 @@ import ShowCase from "../components/ShowCase.astro";
           class="card contrast center middle md-span-2 sm-span-1 sm-none"
         >
           <div>
-            <button class="btn gradient txt-contrast br-none">HolaCactus</button
+            <button class="btn gradient txt-contrast br-none jello-horizontal"
+              >HolaCactus</button
             >
           </div>
         </article>
@@ -80,12 +81,12 @@ import ShowCase from "../components/ShowCase.astro";
         <article
           class="card contrast content span-3 md-span-2 sm-span-1 middle center"
         >
-          <div>
+          <div class="jello-horizontal">
             <Details />
           </div>
         </article>
         <article class="card contrast content middle center sm-span-1">
-          <div><Popover /></div>
+          <div class="jello-horizontal"><Popover /></div>
         </article>
         <article
           class="card contrast content span-2 md-span-3 middle center sm-span-1"
@@ -103,7 +104,7 @@ import ShowCase from "../components/ShowCase.astro";
   </div>
   <div class="bg">
     <section class="container">
-      <aside class="br-accent radius content flex between middle">
+      <aside class="br-accent radius content flex between middle scrollShow">
         <header>
           <h2>Disponible en :</h2>
         </header>
@@ -139,7 +140,7 @@ import ShowCase from "../components/ShowCase.astro";
           <h2 class="txt-center display-3">¿Porqué Cactus CSS?</h2>
         </header>
         <div
-          class="grid col-2 md-col-2 sm-col-1 content gap-bg f-wrap center middle"
+          class="grid col-2 md-col-2 sm-col-1 content gap-bg f-wrap center middle scrollShow"
         >
           <article class="card f-col content primary txt-dark pr">
             <h3>Responsivo</h3>
@@ -239,5 +240,179 @@ import ShowCase from "../components/ShowCase.astro";
     max-width: 37.5rem;
     margin: 0 auto;
     padding: 0 1.25rem;
+  }
+
+  .jello-horizontal {
+    -webkit-animation: jello-horizontal 1s both;
+    animation: jello-horizontal 1s both;
+  }
+
+  .focus-in-expand {
+    -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  .fade-in-bck {
+    -webkit-animation: fade-in-bck 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: fade-in-bck 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }
+
+  .animation-img {
+    -webkit-animation: slide-top 4s ease-in-out infinite alternate-reverse both;
+    animation: slide-top 4s ease-in-out infinite alternate-reverse both;
+  }
+
+  @keyframes show {
+    from {
+      opacity: 0;
+      scale: 25%;
+    }
+
+    to {
+      opacity: 1;
+      scale: 100%;
+    }
+  }
+
+  .scrollShow {
+    view-timeline-name: --element;
+    view-timeline-axis: block;
+    animation-timeline: --element;
+    animation-name: show;
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+  }
+
+  @-webkit-keyframes fade-in-bck {
+    0% {
+      -webkit-transform: translateZ(80px);
+      transform: translateZ(80px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-bck {
+    0% {
+      -webkit-transform: translateZ(80px);
+      transform: translateZ(80px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes focus-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-filter: blur(12px);
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes focus-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-filter: blur(12px);
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px);
+      transform: translateY(-100px);
+    }
+  }
+  @keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px);
+      transform: translateY(-100px);
+    }
+  }
+
+  @-webkit-keyframes jello-horizontal {
+    0% {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+    30% {
+      -webkit-transform: scale3d(1.25, 0.75, 1);
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+      -webkit-transform: scale3d(0.75, 1.25, 1);
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+      -webkit-transform: scale3d(1.15, 0.85, 1);
+      transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+      -webkit-transform: scale3d(0.95, 1.05, 1);
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+      -webkit-transform: scale3d(1.05, 0.95, 1);
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  @keyframes jello-horizontal {
+    0% {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+    30% {
+      -webkit-transform: scale3d(1.25, 0.75, 1);
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+      -webkit-transform: scale3d(0.75, 1.25, 1);
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+      -webkit-transform: scale3d(1.15, 0.85, 1);
+      transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+      -webkit-transform: scale3d(0.95, 1.05, 1);
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+      -webkit-transform: scale3d(1.05, 0.95, 1);
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
   }
 </style>
